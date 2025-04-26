@@ -36,11 +36,11 @@ I love solving real-world problems through tech — without getting stuck endles
 
 ## 📫 Let's Connect!
 
-- **Email**: bejay.ketan1@gmail.com
-- **LinkedIn**: linkedin.com/in/bejay-ketan-guin-67970018a(https://www.linkedin.com/in/bejay-ketan-guin-67970018a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnehYtz%2BxRUqMEQZUndoaEg%3D%3D)](#)
-- **GitHub**: [http://github.com/BKG123](#)
+- **Email**: [bejay.ketan1@gmail.com](mailto:bejay.ketan1@gmail.com)
+- **LinkedIn**: [linkedin.com/in/bejay-ketan-guin-67970018a](https://www.linkedin.com/in/bejay-ketan-guin-67970018a)
+- **GitHub**: [github.com/BKG123](https://github.com/BKG123)
 
-If you love AI, tech, or random deep conversations about how AI is changing everything, let's chat sometime!
+If you love AI, tech, or deep conversations about how AI is reshaping everything, let's connect!
 
 ---
 
@@ -48,5 +48,5 @@ If you love AI, tech, or random deep conversations about how AI is changing ever
 
 ---
 
-**P.S.**   
-This is what chatgpt thinks of me based on the conversations I have had with (him?/her?/it?). This page is MAJOR WIP.
+**P.S.**  
+This page is a work-in-progress, just like me. Built with a little help from ChatGPT (a.k.a. my unofficial co-writer).
