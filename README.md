@@ -37,7 +37,7 @@ I love solving real-world problems through tech — without getting stuck endles
 ## 📫 Let's Connect!
 
 - **Email**: [bejay.ketan1@gmail.com]
-- **LinkedIn**: [[linkedin.com/in/your-profile](https://www.linkedin.com/in/bejay-ketan-guin-67970018a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnehYtz%2BxRUqMEQZUndoaEg%3D%3D)](#)
+- **LinkedIn**: [linkedin.com/in/bejay-ketan-guin-67970018a](https://www.linkedin.com/in/bejay-ketan-guin-67970018a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnehYtz%2BxRUqMEQZUndoaEg%3D%3D)](#)
 - **GitHub**: [http://github.com/BKG123](#)
 
 If you love AI, tech, or random deep conversations about how AI is changing everything, let's chat sometime!
