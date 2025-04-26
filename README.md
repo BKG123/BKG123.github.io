@@ -19,7 +19,7 @@ I love solving real-world problems through tech — without getting stuck endles
 ## 🛠️ Skills
 
 - **Languages**: Python (comfort zone), JavaScript (when needed)
-- **AI/ML**: Generative AI, LLMs, NLP, LangChain
+- **AI/ML**: Generative AI, LLMs, NLP
 - **Frameworks/Tools**: TensorFlow, PyTorch, OpenAI APIs
 - **Web Dev**: HTML, CSS, React (just enough to survive)
 - **Cloud**: AWS basics
@@ -36,9 +36,9 @@ I love solving real-world problems through tech — without getting stuck endles
 
 ## 📫 Let's Connect!
 
-- **Email**: [your-email@example.com]
-- **LinkedIn**: [linkedin.com/in/your-profile](#)
-- **GitHub**: [github.com/your-github](#)
+- **Email**: [bejay.ketan1@gmail.com]
+- **LinkedIn**: [[linkedin.com/in/your-profile](https://www.linkedin.com/in/bejay-ketan-guin-67970018a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnehYtz%2BxRUqMEQZUndoaEg%3D%3D)](#)
+- **GitHub**: [http://github.com/BKG123](#)
 
 If you love AI, tech, or random deep conversations about how AI is changing everything, let's chat sometime!
 
@@ -49,4 +49,4 @@ If you love AI, tech, or random deep conversations about how AI is changing ever
 ---
 
 **P.S.**   
-Sometimes I miss the all-nighters during PhD life... but not the deadlines.
+This is what chatgpt thinks of me based on the conversations I have had with (him?/her?/it?). This page is MAJOR WIP.
