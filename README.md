@@ -1,5 +1,3 @@
-<div style="background-color:#0d1117; color:#c9d1d9; padding: 2rem; border-radius: 10px;">
-
 # Hey, I'm Bejay! 👋
 
 Welcome to my little corner of the internet.
@@ -52,5 +50,3 @@ If you love AI, tech, or random deep conversations about how AI is changing ever
 
 **P.S.**   
 Sometimes I miss the all-nighters during PhD life... but not the deadlines.
-
-</div>
