@@ -11,6 +11,7 @@ Software Engineer. Interested in GenAI.
 
 Currently working on exciting projects that blend technology with creativity. 
 
-##Latest Posts
+## Latest Posts
+
 Check out my [blog](/blog/) for thoughts, experiments, and lessons from the journey.
 
