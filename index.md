@@ -7,11 +7,14 @@ title: "Bejay Ketan Guin"
 
 Software Engineer. Interested in GenAI.
 
-## 🚀 What I'm Up To
+## Professional Journey
+- Software Engineer 2 at [Wingify](https://wingify.com/) - Ongoing
+- Founding Engineer at [Nintee](https://nintee.com/) - 1.5 years
+- Research Scholar at IIT, Kharagpur - 1 year
 
-Currently working on exciting projects that blend technology with creativity. 
 
-## Latest Posts
+## Academic Background
+- M.Tech in Electronics and Telecommunication Engineering at [IIEST, Shibpur](https://www.iiests.ac.in/)
+- B.Tech in Electronics and Communication Engineering at [Techno Main, Salt Lake](https://www.ticollege.ac.in)
 
-Check out my [blog](/blog/) for thoughts, experiments, and lessons from the journey.
 
