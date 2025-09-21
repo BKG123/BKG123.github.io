@@ -1,0 +1,39 @@
+// Footer
+.site-footer {
+  text-align: center;
+  margin-top: $spacer-2xl * 2;
+  padding: $spacer-xl 0;
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: $spacer;
+    margin-bottom: $spacer;
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      color: $text-primary;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $accent-color;
+      }
+
+      svg {
+        width: 24px !important;
+        height: 24px !important;
+        fill: currentColor !important;
+      }
+    }
+  }
+
+  .footer-text {
+    color: $text-muted;
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+}

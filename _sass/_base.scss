@@ -1,0 +1,116 @@
+// Reset and base styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $background-dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: $line-height-tight;
+  margin-bottom: $spacer;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  color: $primary-color;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+  color: $secondary-color;
+  margin-top: $spacer-lg;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-xl;
+  color: $accent-color;
+  margin-top: $spacer-md;
+}
+
+p {
+  margin-bottom: $spacer-md;
+  line-height: $line-height-relaxed;
+  color: $text-color;
+}
+
+// Links
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: $transition-colors;
+
+  &:hover {
+    color: darken($accent-color, 10%);
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: $spacer-md 0;
+  padding-left: $spacer-lg;
+}
+
+li {
+  margin-bottom: $spacer-sm;
+  line-height: $line-height-relaxed;
+
+  strong {
+    color: $secondary-color;
+    font-weight: 600;
+  }
+}
+
+// Blockquotes
+blockquote {
+  background: $gray-50;
+  border-left: 4px solid $accent-color;
+  padding: $spacer-md $spacer-lg;
+  margin: $spacer-lg 0;
+  border-radius: 0 $border-radius $border-radius 0;
+  font-style: italic;
+  position: relative;
+
+  &::before {
+    content: '"';
+    font-size: 4rem;
+    color: rgba($accent-color, 0.2);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-family: serif;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $border-radius;
+}

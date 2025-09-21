@@ -1,0 +1,264 @@
+// Container
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 $spacer;
+
+  @media (max-width: 768px) {
+    padding: 0 $spacer-sm;
+  }
+}
+
+// Header
+.site-header {
+  padding: $spacer-lg 0;
+  margin-bottom: $spacer-2xl;
+}
+
+// Top Navigation
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacer 0;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $spacer-2xl;
+
+  .nav-link {
+    color: $text-secondary;
+    text-decoration: none;
+    margin-right: $spacer-lg;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $text-primary;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: $spacer;
+
+    .search-icon, .theme-icon {
+      color: $text-secondary;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+// Hero Section
+.main-hero {
+  text-align: center;
+  margin-bottom: $spacer-2xl;
+
+  .hero-name {
+    font-size: $font-size-4xl;
+    font-weight: 400;
+    color: $text-primary;
+    margin-bottom: $spacer-sm;
+    letter-spacing: -0.025em;
+
+    @media (max-width: 768px) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  .hero-title {
+    color: $link-color;
+    font-size: $font-size-lg;
+    margin-bottom: $spacer;
+    font-weight: 400;
+  }
+
+  .hero-description {
+    color: $text-secondary;
+    font-size: $font-size-base;
+    max-width: 600px;
+    margin: 0 auto $spacer-lg;
+    line-height: $line-height-relaxed;
+  }
+}
+
+// Main content
+.main-content {
+  margin-bottom: $spacer-2xl;
+}
+
+// Aim Section
+.aim-section {
+  margin-bottom: $spacer-2xl;
+
+  h2 {
+    font-size: $font-size-2xl;
+    color: $text-primary;
+    margin-bottom: $spacer;
+    font-weight: 400;
+  }
+
+  ul {
+    margin: $spacer 0;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      color: $text-secondary;
+      margin-bottom: $spacer-sm;
+      position: relative;
+      padding-left: $spacer;
+
+      &:before {
+        content: '•';
+        color: $text-muted;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  p {
+    color: $text-secondary;
+    margin-top: $spacer;
+
+    .resume-link {
+      color: $link-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Latest Posts Section
+.latest-posts {
+  margin-bottom: $spacer-2xl;
+
+  h2 {
+    font-size: $font-size-2xl;
+    color: $text-primary;
+    margin-bottom: $spacer;
+    font-weight: 400;
+  }
+
+  .post-list {
+    .post-item {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: $spacer;
+      gap: $spacer;
+
+      .post-date {
+        color: $text-muted;
+        font-size: 0.9rem;
+        min-width: 80px;
+        flex-shrink: 0;
+      }
+
+      .post-title {
+        color: $link-color;
+        text-decoration: none;
+        flex: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Skills grid
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacer-md;
+  margin-top: $spacer-lg;
+}
+
+.skill-item {
+  padding: $spacer;
+  background: $gray-50;
+  border-radius: $border-radius;
+  border-left: 4px solid $accent-color;
+
+  strong {
+    display: block;
+    margin-bottom: $spacer-sm;
+    color: $secondary-color;
+  }
+}
+
+// Projects
+.project-item {
+  padding: $spacer-md;
+  margin-bottom: $spacer;
+  background: $gray-50;
+  border-radius: $border-radius;
+  border-left: 4px solid $success-color;
+  transition: $transition-base;
+
+  &:hover {
+    background: $white;
+    box-shadow: $shadow-sm;
+    transform: translateX(4px);
+  }
+}
+
+// Blog grid
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacer-lg;
+  margin-top: $spacer-lg;
+}
+
+.blog-card {
+  background: $white;
+  padding: $spacer-lg;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  border-left: 4px solid $accent-color;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: $spacer;
+
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  p {
+    color: $text-muted;
+    margin-bottom: $spacer;
+  }
+
+  small {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+}
