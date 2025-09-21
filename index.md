@@ -2,7 +2,7 @@
 layout: default
 title: "Bejay Ketan Guin"
 ---
-
+![Profile Photo]({{ "/assets/images/profile.jpeg" | relative_url }}){: .profile-image}
 # BEJAY KETAN GUIN
 
 **Software Engineer @ Wingify**

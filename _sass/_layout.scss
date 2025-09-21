@@ -1,10 +1,21 @@
 // Container
 .container {
-  max-width: 700px;
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 $spacer;
 
+  @media (min-width: 1200px) {
+    width: 85%;
+  }
+
   @media (max-width: 768px) {
+    width: 95%;
+    padding: 0 $spacer-sm;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
     padding: 0 $spacer-sm;
   }
 }
@@ -55,6 +66,21 @@
         color: $text-primary;
       }
     }
+  }
+}
+
+// Profile Image
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: $spacer-lg;
+  box-shadow: $shadow-lg;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
   }
 }
 
