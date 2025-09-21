@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Hey, I'm Bejay! 👋"
+title: "Bejay Ketan Guin"
 ---
 
-# Hey, I'm Bejay! 👋
+# **Bejay** Ketan Guin
 
 Welcome to my little corner of the internet.
 
