@@ -1,0 +1,150 @@
+// Responsive breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Mobile-first responsive design
+@media (max-width: $breakpoint-sm) {
+  .container {
+    padding: 0 $spacer-sm;
+  }
+
+  .site-header {
+    padding: $spacer-lg 0;
+    margin-bottom: $spacer-lg;
+  }
+
+  .site-title {
+    font-size: $font-size-3xl;
+    line-height: 1.1;
+  }
+
+  .site-description {
+    font-size: $font-size-base;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: $spacer-sm;
+    align-items: center;
+  }
+
+  .nav-link {
+    padding: $spacer-sm;
+    width: 80%;
+    text-align: center;
+  }
+
+  .content-section {
+    padding: $spacer-md;
+    margin-bottom: $spacer-lg;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: $spacer;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: $spacer;
+  }
+
+  .social-link {
+    width: 80%;
+    justify-content: center;
+    padding: $spacer;
+  }
+
+  .footer-quote {
+    padding: $spacer;
+    font-size: $font-size-base;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .site-header,
+  .main-nav,
+  .social-links {
+    display: none;
+  }
+
+  .content-section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #000000;
+    --accent-color: #0000ee;
+    --text-color: #000000;
+    --background: #ffffff;
+  }
+
+  .content-section,
+  .site-header {
+    border: 2px solid #000000;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .wave {
+    animation: none !important;
+  }
+
+  .site-footer::before {
+    animation: none !important;
+  }
+}
