@@ -8,19 +8,20 @@ title: Blog
     <p>Thoughts, experiments, and lessons from the journey.</p>
 
     <div class="blog-grid">
+        {% for post in site.posts %}
         <div class="blog-card">
-            <h3><a href="blog1.html">Your Feelings Lie to You (Sometimes)</a></h3>
-            <p>How trusting only your emotions can sometimes backfire — and why data-driven action wins.</p>
-            <small>Posted: Apr 2025</small>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.description | default: post.excerpt | strip_html | truncatewords: 25 }}</p>
+            <small>Posted: {{ post.date | date: "%B %Y" }}</small>
         </div>
+        {% endfor %}
 
-        <!-- You can add more blog cards like this easily in future -->
-        <!--
+        {% if site.posts.size == 0 %}
         <div class="blog-card">
-            <h3><a href="blog2.html">Another Cool Blog Post</a></h3>
-            <p>Short description of that blog post here...</p>
-            <small>Posted: May 2025</small>
+            <h3>Welcome to the blog!</h3>
+            <p>Posts will appear here as they're published.</p>
+            <small>Stay tuned...</small>
         </div>
-        -->
+        {% endif %}
     </div>
 </section>

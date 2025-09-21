@@ -16,16 +16,17 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      color: $text-muted;
+      color: $text-primary;
       transition: color 0.2s ease;
 
       &:hover {
-        color: $text-primary;
+        color: $accent-color;
       }
 
       svg {
-        width: 20px;
-        height: 20px;
+        width: 24px !important;
+        height: 24px !important;
+        fill: currentColor !important;
       }
     }
   }

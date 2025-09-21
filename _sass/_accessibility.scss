@@ -46,7 +46,7 @@ a {
   }
 
   // External link indicator
-  &[target="_blank"]::after {
+  &[target="_blank"]:not(.social-icon)::after {
     content: " (opens in new tab)";
     font-size: 0.85em;
     color: $text-muted;
