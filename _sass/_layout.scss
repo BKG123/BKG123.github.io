@@ -1,10 +1,21 @@
 // Container
 .container {
-  max-width: 700px;
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 $spacer;
 
+  @media (min-width: 1200px) {
+    width: 85%;
+  }
+
   @media (max-width: 768px) {
+    width: 95%;
+    padding: 0 $spacer-sm;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
     padding: 0 $spacer-sm;
   }
 }
@@ -58,6 +69,21 @@
   }
 }
 
+// Profile Image
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: $spacer-lg;
+  box-shadow: $shadow-lg;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 // Hero Section
 .main-hero {
   text-align: center;
@@ -88,6 +114,96 @@
     max-width: 600px;
     margin: 0 auto $spacer-lg;
     line-height: $line-height-relaxed;
+  }
+}
+
+// Hero Intro Section (Profile + Intro side by side)
+.hero-intro-section {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacer-2xl;
+  margin-bottom: $spacer-2xl;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $spacer-lg;
+  }
+
+  .profile-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile-image {
+      margin-bottom: $spacer;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: $spacer;
+      justify-content: center;
+
+      .social-icon {
+        color: $text-secondary;
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+          color: $text-primary;
+          transform: translateY(-2px);
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .intro-container {
+    flex: 1;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: $font-size-4xl;
+      font-weight: 400;
+      color: $text-primary;
+      margin-bottom: $spacer-sm;
+      letter-spacing: -0.025em;
+      margin-top: 0;
+
+      @media (max-width: 768px) {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    p {
+      color: $text-secondary;
+      line-height: $line-height-relaxed;
+      margin-bottom: $spacer;
+    }
+
+    strong {
+      color: $text-primary;
+    }
+
+    hr {
+      margin: $spacer-lg 0;
+      border: none;
+      border-top: 1px solid $border-color;
+    }
   }
 }
 
