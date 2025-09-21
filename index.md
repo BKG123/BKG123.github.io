@@ -49,9 +49,3 @@ With a strong background in software engineering and artificial intelligence, I 
 
 - M.Tech in Electronics and Telecommunication Engineering at the IIEST, Shibpur
 - B.Tech in Electronics and Communication Engineering at Techno Main, Salt Lake
-
-## LET'S CONNECT
-
-Explore my projects and read my articles to see my work in action. Feel free to contact me to discuss potential collaborations or to learn more about my experience and skills. Check out my portfolio or **book a call**.
-
----
