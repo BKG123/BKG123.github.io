@@ -35,7 +35,9 @@ title: "Bejay Ketan Guin"
 **Software Engineer 2 @ Wingify**
 📍 Remote
 
-With a strong background in software engineering and artificial intelligence, I excel at building scalable applications and innovative solutions—always staying ahead by leveraging the latest technologies and best practices.
+Human Software Engineer. Interested in GenAI.
+
+[My Resume](https://drive.google.com/file/d/1hDcMEqoYkcik4LDD_v_9ERKIX-38vBWe/view?usp=drive_link)
   </div>
 </div>
 
