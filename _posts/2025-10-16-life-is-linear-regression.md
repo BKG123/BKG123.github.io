@@ -1,4 +1,12 @@
-## **Everything in Life is Linear Regression**
+---
+layout: post
+title: "Everything in Life is Linear Regression"
+date: 2025-10-16
+description: "Food for thought"
+author: "Bejay"
+acknowledgment: "Original thoughts, polished with a little help from <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
+---
+
 
 When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:
 
