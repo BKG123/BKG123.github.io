@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Life Is Linear Regression | Bejay’s Website</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Life Is Linear Regression" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Everything in Life is Linear Regression" />
+<meta property="og:description" content="Everything in Life is Linear Regression" />
+<link rel="canonical" href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" />
+<meta property="og:url" content="http://localhost:4000/2025/10/16/life-is-linear-regression.html" />
+<meta property="og:site_name" content="Bejay’s Website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-16T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Life Is Linear Regression" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-16T00:00:00+05:30","datePublished":"2025-10-16T00:00:00+05:30","description":"Everything in Life is Linear Regression","headline":"Life Is Linear Regression","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/10/16/life-is-linear-regression.html"},"url":"http://localhost:4000/2025/10/16/life-is-linear-regression.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=a2d4404bcc99424770d2c2e28fda7c4d2a2e8dc5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="container">
+      <header class="site-header" role="banner">
+  <nav class="top-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-link">about</a>
+    <a href="/blog/" class="nav-link">blog</a>
+    <a href="#projects" class="nav-link">projects</a>
+    <div class="nav-icons">
+      <span class="theme-icon">🌙</span>
+    </div>
+  </nav>
+</header>
+
+      <main id="main-content" class="main-content" role="main">
+        <div style="text-align: center; margin-bottom: 2rem;">
+    <a href="/blog/" style="color: #3182ce; text-decoration: none; font-weight: 500;">← Back to Blog</a>
+</div>
+
+<article class="content-section">
+    <header class="post-header">
+        <h1 class="post-title">Life Is Linear Regression</h1>
+        <p class="post-meta">
+            <time datetime="2025-10-16T00:00:00+05:30">October 16, 2025</time>
+            
+        </p>
+    </header>
+
+    <div class="post-content">
+        <h2 id="everything-in-life-is-linear-regression"><strong>Everything in Life is Linear Regression</strong></h2>
+
+<p>When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:</p>
+
+<p><strong>y = wx + c</strong></p>
+
+<p>Largely similar to the equation of a straight line. Here, the value of <strong>y</strong> (dependent variable) changes with <strong>x</strong> (independent variable).</p>
+
+<p>Now, if we extrapolate this to multiple independent variables:</p>
+
+<p><strong>y = w₁x₁ + w₂x₂ + … + wₙxₙ + c</strong></p>
+
+<p>In most use cases of linear regression, this is the case. An outcome or output is dependent on multiple factors.</p>
+
+<p>Suppose you’re modeling the house price of a city using linear regression. You’ll find that historically, the price of a house depends on multiple factors — area, number of rooms, sq footage, parking (available or not), and so on. The Linear Regression algorithm tries to find those coefficients — w₁, w₂, … wₙ — and we get a model (or equation) on which, if we feed in new values of x₁…xₙ, we can “predict” or “estimate” the cost of the house in question.</p>
+
+<p>Now, the idea of this blog is not to deep dive into LR. It’s because I seem to find a parallel between everything in life and this mathematical concept — not the linear part, but the <strong>combination part</strong> where everything is a combination of multiple things with different scaling factors associated with each of them.</p>
+
+<hr />
+
+<h3 id="for-example">For example:</h3>
+
+<p>Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently “making you late” by asking you to eat breakfast before leaving. But this is <strong>black-and-white thinking</strong> — sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.</p>
+
+<p>If I were to put it in the equation:</p>
+
+<p><strong>minutes_late = w₁(breakfast_delay) + w₂(woke_up_late) + w₃(traffic_level) + w₄(distance_to_station) + w₅(train_punctuality) + c</strong></p>
+
+<p>Where:</p>
+<ul>
+  <li><strong>minutes_late</strong> = how many minutes late you arrived at the station (or how close you were to missing the train)</li>
+  <li><strong>breakfast_delay</strong> = time spent on breakfast (in minutes)</li>
+  <li><strong>woke_up_late</strong> = how late you woke up compared to planned time (in minutes)</li>
+  <li><strong>traffic_level</strong> = traffic congestion factor (could be 1-10 scale, or actual delay in minutes)</li>
+  <li><strong>distance_to_station</strong> = distance you need to travel (in km)</li>
+  <li><strong>train_punctuality</strong> = how early/late the train typically runs (in minutes)</li>
+  <li><strong>c</strong> = baseline constant (accounts for other unmeasured factors)</li>
+</ul>
+
+<p>The weights (w₁, w₂, w₃, etc.) represent how much each factor contributes to the outcome. For instance:</p>
+<ul>
+  <li>Maybe <strong>w₂</strong> is large because waking up late has a huge cascading effect</li>
+  <li><strong>w₁</strong> might be small because breakfast only added 5 minutes</li>
+  <li><strong>w₃</strong> could be moderate depending on how unpredictable traffic is</li>
+</ul>
+
+<hr />
+
+<p>The more experiences I have in life, the more I resonate with this.</p>
+
+<p>Now, I know real linear regression has assumptions about linearity and independence that life often violates. But as a mental model for thinking about multiple factors contributing to outcomes, it works surprisingly well.</p>
+
+<p>This also helps me approach differences in opinions in a calmer and composed manner. Let’s say India wins a cricket match — some say it was because of Virat’s ton. Some say it’s because of Bumrah’s fifer. Or some say it was because of Rohit’s quickfire 25 off 10 balls.</p>
+
+<p>I say <strong>it’s all of that</strong>. Just with different weights.</p>
+
+<hr />
+
+<h3 id="another-example">Another example:</h3>
+
+<p>Someone says, “They broke up because he was toxic.”</p>
+
+<p>But reality?</p>
+
+<p><strong>relationship_strain = w₁(miscommunication) + w₂(incompatible goals) + w₃(external stress) + w₄(personality issues) + w₅(past baggage) + c</strong></p>
+
+<p>We love single-factor explanations because they’re simple. But life is <strong>multivariate</strong>, not binary.</p>
+
+<hr />
+
+<p>Ever since I started viewing life through this lens — not the <em>linear</em> part of Linear Regression, but the <em>weighted combination</em> part — I’ve become less judgmental, more curious, and surprisingly more forgiving.</p>
+
+<p>Because nothing “just happens.”</p>
+
+<p><strong>Outcome = Σ (all factors × their weights) + some randomness</strong></p>
+
+<p>And most of us are just bad at estimating the weights.</p>
+
+    </div>
+
+    
+</article>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <p style="color: #666;">Thanks for reading! ✨</p>
+</div>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+  <div class="social-icons">
+    <a href="mailto:bejay.ketan1@gmail.com" class="social-icon" aria-label="Email">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/BKG123" target="_blank" class="social-icon" aria-label="GitHub">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/bejay-ketan-guin-67970018a" target="_blank" class="social-icon" aria-label="LinkedIn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+    <a href="https://x.com/bkguin" target="_blank" class="social-icon" aria-label="Twitter">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+  </div>
+  <p class="footer-text">Best way to reach me is to drop a note to my gmail.</p>
+</footer>
+    </div>
+
+    <script src="/assets/js/theme.js"></script>
+  </body>
+</html>

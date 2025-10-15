@@ -1,5 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-23T00:45:33+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Conciousness &amp;amp; AI - part 1</title><link href="http://localhost:4000/2025/09/21/conciousness-and-ai-par1.html" rel="alternate" type="text/html" title="Conciousness &amp;amp; AI - part 1" /><published>2025-09-21T00:00:00+05:30</published><updated>2025-09-21T00:00:00+05:30</updated><id>http://localhost:4000/2025/09/21/conciousness-and-ai-par1</id><content type="html" xml:base="http://localhost:4000/2025/09/21/conciousness-and-ai-par1.html"><![CDATA[<p>The common people began to have access to “AI” since the launch of chatgpt in 2022 end (30th Nov, 2022 to be precise).
-Before that AI was on a sci-fi domain for people. AI was being used for very spefic day to day tasks but it was not as significatnt or head turner as perhaps a Ultron of</p>]]></content><author><name>Bejay</name></author><summary type="html"><![CDATA[My thought dump]]></summary></entry><entry><title type="html">Frame Ai</title><link href="http://localhost:4000/2025/09/02/frame-ai.html" rel="alternate" type="text/html" title="Frame Ai" /><published>2025-09-02T00:00:00+05:30</published><updated>2025-09-02T00:00:00+05:30</updated><id>http://localhost:4000/2025/09/02/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/09/02/frame-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cortex Ai</title><link href="http://localhost:4000/2025/08/20/cortex-ai.html" rel="alternate" type="text/html" title="Cortex Ai" /><published>2025-08-20T00:00:00+05:30</published><updated>2025-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/08/20/cortex-ai</id><content type="html" xml:base="http://localhost:4000/2025/08/20/cortex-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Your Feelings Lie to You (Sometimes)</title><link href="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html" rel="alternate" type="text/html" title="Your Feelings Lie to You (Sometimes)" /><published>2025-04-15T00:00:00+05:30</published><updated>2025-04-15T00:00:00+05:30</updated><id>http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes</id><content type="html" xml:base="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html"><![CDATA[<h2 id="we-are-human-beings-we-feel-things-and-thats-beautiful">We are human beings. We feel things. And that’s beautiful.</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-16T00:28:01+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Life Is Linear Regression</title><link href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" rel="alternate" type="text/html" title="Life Is Linear Regression" /><published>2025-10-16T00:00:00+05:30</published><updated>2025-10-16T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/16/life-is-linear-regression</id><content type="html" xml:base="http://localhost:4000/2025/10/16/life-is-linear-regression.html"><![CDATA[<h2 id="everything-in-life-is-linear-regression"><strong>Everything in Life is Linear Regression</strong></h2>
+
+<p>When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:</p>
+
+<p><strong>y = wx + c</strong></p>
+
+<p>Largely similar to the equation of a straight line. Here, the value of <strong>y</strong> (dependent variable) changes with <strong>x</strong> (independent variable).</p>
+
+<p>Now, if we extrapolate this to multiple independent variables:</p>
+
+<p><strong>y = w₁x₁ + w₂x₂ + … + wₙxₙ + c</strong></p>
+
+<p>In most use cases of linear regression, this is the case. An outcome or output is dependent on multiple factors.</p>
+
+<p>Suppose you’re modeling the house price of a city using linear regression. You’ll find that historically, the price of a house depends on multiple factors — area, number of rooms, sq footage, parking (available or not), and so on. The Linear Regression algorithm tries to find those coefficients — w₁, w₂, … wₙ — and we get a model (or equation) on which, if we feed in new values of x₁…xₙ, we can “predict” or “estimate” the cost of the house in question.</p>
+
+<p>Now, the idea of this blog is not to deep dive into LR. It’s because I seem to find a parallel between everything in life and this mathematical concept — not the linear part, but the <strong>combination part</strong> where everything is a combination of multiple things with different scaling factors associated with each of them.</p>
+
+<hr />
+
+<h3 id="for-example">For example:</h3>
+
+<p>Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently “making you late” by asking you to eat breakfast before leaving. But this is <strong>black-and-white thinking</strong> — sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.</p>
+
+<p>If I were to put it in the equation:</p>
+
+<p><strong>minutes_late = w₁(breakfast_delay) + w₂(woke_up_late) + w₃(traffic_level) + w₄(distance_to_station) + w₅(train_punctuality) + c</strong></p>
+
+<p>Where:</p>
+<ul>
+  <li><strong>minutes_late</strong> = how many minutes late you arrived at the station (or how close you were to missing the train)</li>
+  <li><strong>breakfast_delay</strong> = time spent on breakfast (in minutes)</li>
+  <li><strong>woke_up_late</strong> = how late you woke up compared to planned time (in minutes)</li>
+  <li><strong>traffic_level</strong> = traffic congestion factor (could be 1-10 scale, or actual delay in minutes)</li>
+  <li><strong>distance_to_station</strong> = distance you need to travel (in km)</li>
+  <li><strong>train_punctuality</strong> = how early/late the train typically runs (in minutes)</li>
+  <li><strong>c</strong> = baseline constant (accounts for other unmeasured factors)</li>
+</ul>
+
+<p>The weights (w₁, w₂, w₃, etc.) represent how much each factor contributes to the outcome. For instance:</p>
+<ul>
+  <li>Maybe <strong>w₂</strong> is large because waking up late has a huge cascading effect</li>
+  <li><strong>w₁</strong> might be small because breakfast only added 5 minutes</li>
+  <li><strong>w₃</strong> could be moderate depending on how unpredictable traffic is</li>
+</ul>
+
+<hr />
+
+<p>The more experiences I have in life, the more I resonate with this.</p>
+
+<p>Now, I know real linear regression has assumptions about linearity and independence that life often violates. But as a mental model for thinking about multiple factors contributing to outcomes, it works surprisingly well.</p>
+
+<p>This also helps me approach differences in opinions in a calmer and composed manner. Let’s say India wins a cricket match — some say it was because of Virat’s ton. Some say it’s because of Bumrah’s fifer. Or some say it was because of Rohit’s quickfire 25 off 10 balls.</p>
+
+<p>I say <strong>it’s all of that</strong>. Just with different weights.</p>
+
+<hr />
+
+<h3 id="another-example">Another example:</h3>
+
+<p>Someone says, “They broke up because he was toxic.”</p>
+
+<p>But reality?</p>
+
+<p><strong>relationship_strain = w₁(miscommunication) + w₂(incompatible goals) + w₃(external stress) + w₄(personality issues) + w₅(past baggage) + c</strong></p>
+
+<p>We love single-factor explanations because they’re simple. But life is <strong>multivariate</strong>, not binary.</p>
+
+<hr />
+
+<p>Ever since I started viewing life through this lens — not the <em>linear</em> part of Linear Regression, but the <em>weighted combination</em> part — I’ve become less judgmental, more curious, and surprisingly more forgiving.</p>
+
+<p>Because nothing “just happens.”</p>
+
+<p><strong>Outcome = Σ (all factors × their weights) + some randomness</strong></p>
+
+<p>And most of us are just bad at estimating the weights.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Everything in Life is Linear Regression]]></summary></entry><entry><title type="html">Coding in the era of LLMs</title><link href="http://localhost:4000/2025/09/21/coding-in-the-era-of-llms.html" rel="alternate" type="text/html" title="Coding in the era of LLMs" /><published>2025-09-21T00:00:00+05:30</published><updated>2025-09-21T00:00:00+05:30</updated><id>http://localhost:4000/2025/09/21/coding-in-the-era-of-llms</id><content type="html" xml:base="http://localhost:4000/2025/09/21/coding-in-the-era-of-llms.html"><![CDATA[<p>The common people began to have access to “AI” since the launch of chatgpt in 2022 end (30th Nov, 2022 to be precise).
+Before that AI was on a sci-fi domain for people. AI was being used for very specific day to day tasks but it was not as significant or head turner as perhaps a Ultron of Avengers fame.</p>
+
+<p>This opened a new avenue. People started recognising the true power of AI. This was also felt in the software engineering career. People started to write code using these LLMs.</p>
+
+<p>I also joined the bandwagon. It definitely felt helpful for certain well defined tasks.
+But AI assisted coding was far from perfect. But it steadily started improving.</p>
+
+<p>The turning point for me was cursor - the AI assisted IDE. I really started growing fond of the tab feature. By then the models had started to improve drastically too. The claude sonnet 3.5 + cursor duo turned out to be really a great duo. The tab feature specifically works for me because it is I who take care of the logic while the tab feature autocompletes it. It makes coding faster.</p>
+
+<p>Then came cursor agent. It could really start building features on its own.</p>
+
+<h2 id="the-dark-side-nobody-talks-about">The Dark Side Nobody Talks About</h2>
+
+<p>But here’s the thing that worries me as I see more people jumping into this AI-powered coding revolution: <strong>not everyone should be coding with AI the same way.</strong></p>
+
+<p>There’s a dangerous trend emerging, especially among beginners. People who are brand new to programming are treating AI as a magic wand that removes the need to actually learn to code. They’re “vibe coding” - throwing prompts at ChatGPT or Cursor and shipping whatever comes out without really understanding what’s happening under the hood.</p>
+
+<h3 id="the-data-tells-a-sobering-story">The Data Tells a Sobering Story</h3>
+
+<p>The numbers paint an uncomfortable picture. A 2025 study by METR tracked experienced developers and found something shocking: when using AI tools, developers actually took 19% longer to complete tasks compared to working without AI. Even more troubling? The developers thought they were 20% faster. That’s a 39-point gap between perception and reality.</p>
+
+<p>Trust in AI coding tools has been plummeting too. Stack Overflow’s 2025 survey shows developer trust in AI output accuracy dropped from 43% in 2024 to just 33% in 2025. The favorability of adding AI tools to workflows fell from 72% to 60% in the same period.</p>
+
+<h3 id="the-beginners-trap">The Beginner’s Trap</h3>
+
+<p>For beginners, the risks are even more severe. When you don’t have the fundamentals, you can’t tell when AI is wrong. And it’s wrong more often than you’d think.</p>
+
+<p>Consider these real problems people are facing:</p>
+
+<ul>
+  <li>Up to 30% of packages suggested by AI tools don’t even exist - they’re hallucinated, creating security vulnerabilities</li>
+  <li>40% of AI-generated database queries are vulnerable to SQL injection attacks</li>
+  <li>AI often puts security checks on the client side instead of the server</li>
+  <li>Hardcoded API keys and secrets frequently appear in generated code</li>
+</ul>
+
+<p>One experienced developer shared how an AI-generated script locked them out of root access because they asked it to “make it super secure” without reviewing the implementation. These aren’t edge cases. They’re common patterns.</p>
+
+<h3 id="you-still-need-to-learn-the-fundamentals">You Still Need to Learn the Fundamentals</h3>
+
+<p>Here’s what the experts are saying: AI coding without a foundation is like letting someone who’s never flown a plane sit in the cockpit and take off in automated mode. It sounds crazy when you put it that way, right?</p>
+
+<p>As one senior product manager at Qt Group put it: “If junior developers generate code with AI assistants and deploy the code to digital products without truly understanding it, then they run into the risk of introducing suboptimal code. Whenever junior developers use AI-generated code, they’re not really learning how to write and review code themselves.”</p>
+
+<p>The most successful approach isn’t to avoid AI - that would be career suicide at this point. According to a 2024 developer survey, 76% of developers are using or planning to use AI coding assistants. The market for AI coding tools was valued at $5.5 billion in 2024 and is projected to hit $47.3 billion by 2034.</p>
+
+<p>But you need to <strong>earn the right</strong> to use these tools effectively.</p>
+
+<h3 id="the-right-way-to-learn-with-ai">The Right Way to Learn with AI</h3>
+
+<p>Think of AI as a senior developer looking over your shoulder, not as a replacement for your brain. Here’s what actually works:</p>
+
+<ol>
+  <li>
+    <p><strong>Learn the fundamentals first</strong>. Understand variables, control flow, data structures, functions. Write enough code manually that you can spot when something looks wrong.</p>
+  </li>
+  <li>
+    <p><strong>Write it yourself, then compare</strong>. Try solving a problem on your own first. Then ask AI how it would do it. See what’s different. Learn from the gaps.</p>
+  </li>
+  <li>
+    <p><strong>Never deploy code you don’t understand</strong>. If AI generates something and you can’t explain what each part does, you’re not ready to use it. Debug it. Break it. Fix it. Make it yours.</p>
+  </li>
+  <li>
+    <p><strong>Use AI to augment, not replace, learning</strong>. AI is incredible for explaining concepts, suggesting improvements, and catching bugs. But it can’t build your mental model of how code works.</p>
+  </li>
+</ol>
+
+<p>The developers who will thrive aren’t the ones who can write the best prompts. They’re the ones who know enough to recognize when AI is leading them astray.</p>
+
+<h3 id="looking-forward">Looking Forward</h3>
+
+<p>AI coding tools are only going to get better. Models are improving, context windows are expanding (Cursor now offers 1M+ token context windows), and response times are getting faster. We’re seeing the emergence of autonomous coding agents that can handle entire features.</p>
+
+<p>But the gap between those who understand what’s happening and those who are just prompt-engineering their way through is going to become a chasm. Companies are already learning what happens when their codebases get infiltrated with AI-generated code at scale. We’re seeing bigger incidents with slower resolution times because the people trying to fix problems don’t understand the code that created them.</p>
+
+<h2 id="my-take">My Take</h2>
+
+<p>I love AI coding tools. The cursor + claude combo has genuinely made me more productive. But I was coding since before these tools existed. I had spent years debugging obscure errors, refactoring messy code, and building that intuition for what good code looks like. That foundation is why I can tell when cursor’s suggestions are brilliant and when they’re subtly broken.</p>
+
+<p>I see people jumping straight to AI without that foundation, and honestly, it makes me a bit nervous for them. Not in a gatekeeping way - I’m genuinely excited about more people getting into coding. But there’s a difference between using AI as a productivity booster and using it as a crutch to avoid learning.</p>
+
+<p>When I use the tab feature, I already know what I want to build. The AI just saves me the typing. When I use cursor agent, I review every change it makes because I know what to look for. That’s the difference.</p>
+
+<p>Look, I’m not going to tell you how to learn. Maybe you’ll figure out your own path that works better. But from where I’m standing, having gone through both worlds - the pre-AI grind and the AI-assisted present - the people who seem to struggle the most are the ones who skipped straight to step two.</p>
+
+<p>The cursor + claude duo is incredible. But it’s incredible <em>because</em> I know what I’m doing. Without that, it’s just a fancy autocomplete that occasionally leads you off a cliff.</p>
+
+<p>That’s my experience anyway. Your mileage may vary.</p>]]></content><author><name>Bejay</name></author><summary type="html"><![CDATA[My thought dump on AI and coding]]></summary></entry><entry><title type="html">Frame Ai</title><link href="http://localhost:4000/2025/09/02/frame-ai.html" rel="alternate" type="text/html" title="Frame Ai" /><published>2025-09-02T00:00:00+05:30</published><updated>2025-09-02T00:00:00+05:30</updated><id>http://localhost:4000/2025/09/02/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/09/02/frame-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cortex Ai</title><link href="http://localhost:4000/2025/08/20/cortex-ai.html" rel="alternate" type="text/html" title="Cortex Ai" /><published>2025-08-20T00:00:00+05:30</published><updated>2025-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/08/20/cortex-ai</id><content type="html" xml:base="http://localhost:4000/2025/08/20/cortex-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Your Feelings Lie to You (Sometimes)</title><link href="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html" rel="alternate" type="text/html" title="Your Feelings Lie to You (Sometimes)" /><published>2025-04-15T00:00:00+05:30</published><updated>2025-04-15T00:00:00+05:30</updated><id>http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes</id><content type="html" xml:base="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html"><![CDATA[<h2 id="we-are-human-beings-we-feel-things-and-thats-beautiful">We are human beings. We feel things. And that’s beautiful.</h2>
 
 <p>But we also have a gift from evolution called the prefrontal cortex, the logical center of the brain.
 Pop culture constantly pushes the idea of “follow your heart” or “do what feels right.”
