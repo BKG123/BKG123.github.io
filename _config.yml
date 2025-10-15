@@ -14,6 +14,7 @@ linkedin_username: bejay-ketan-guin-67970018a
 markdown: kramdown
 highlighter: rouge
 theme: minima
+future: true
 plugins:
   - jekyll-feed
   - jekyll-sitemap
