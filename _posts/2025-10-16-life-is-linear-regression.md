@@ -7,6 +7,10 @@ author: "Bejay"
 acknowledgment: "Original thoughts, polished with a little help from <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
 ---
 
+<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image1.png" alt="Everything in Life is Linear Regression">
+  <figcaption>Life's complexities can be understood through the lens of weighted combinations</figcaption>
+</figure>
 
 When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:
 
@@ -29,6 +33,11 @@ Now, the idea of this blog is not to deep dive into LR. It's because I seem to f
 ### For example:
 
 Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently "making you late" by asking you to eat breakfast before leaving. But this is **black-and-white thinking** — sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.
+
+<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image2.png" alt="Multiple factors contributing to missing a train">
+  <figcaption>Missing the train isn't about one factor — it's a weighted combination of breakfast delay, waking up late, traffic, and more</figcaption>
+</figure>
 
 If I were to put it in the equation:
 
@@ -75,6 +84,11 @@ We love single-factor explanations because they're simple. But life is **multiva
 Ever since I started viewing life through this lens — not the *linear* part of Linear Regression, but the *weighted combination* part — I've become less judgmental, more curious, and surprisingly more forgiving.
 
 Because nothing "just happens."
+
+<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image3.png" alt="Life as a sum of weighted factors">
+  <figcaption>Every outcome in life is the sum of multiple factors, each with its own weight — plus a bit of randomness</figcaption>
+</figure>
 
 **Outcome = Σ (all factors × their weights) + some randomness**
 

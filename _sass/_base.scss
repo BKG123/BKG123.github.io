@@ -119,3 +119,89 @@ img {
   height: auto;
   border-radius: $border-radius;
 }
+
+// Post images with captions using figure/figcaption
+.post-content {
+  // Figure container
+  figure {
+    display: table;
+    margin: $spacer-xl auto;
+    max-width: 85%;
+
+    @media (max-width: 768px) {
+      margin: $spacer-lg auto;
+      max-width: 95%;
+    }
+
+    // Image styling
+    img {
+      display: block;
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-lg;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+      }
+
+      @media (max-width: 768px) {
+        max-height: 300px;
+      }
+    }
+
+    // Caption styling
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+      margin-top: $spacer;
+      padding: $spacer-sm $spacer;
+      text-align: center;
+      font-size: $font-size-sm;
+      font-style: italic;
+      color: $text-muted;
+      background: rgba(var(--caption-bg, 0, 0, 0), 0.03);
+      border-radius: 0 0 $border-radius $border-radius;
+      line-height: $line-height-relaxed;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+        padding: $spacer-sm;
+      }
+    }
+  }
+
+  // Hero figure (first figure)
+  figure:first-of-type {
+    max-width: 75%;
+    margin-top: $spacer-2xl;
+    margin-bottom: $spacer-2xl;
+
+    img {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      max-width: 90%;
+      margin-top: $spacer-lg;
+      margin-bottom: $spacer-lg;
+    }
+  }
+
+  // Fallback for plain images without figure
+  img:not(figure img) {
+    display: block;
+    margin: $spacer-lg auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+
+    @media (max-width: 768px) {
+      margin: $spacer-md auto;
+    }
+  }
+}

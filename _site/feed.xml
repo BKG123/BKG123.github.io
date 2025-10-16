@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-16T00:49:43+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Everything in Life is Linear Regression</title><link href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" rel="alternate" type="text/html" title="Everything in Life is Linear Regression" /><published>2025-10-16T00:00:00+05:30</published><updated>2025-10-16T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/16/life-is-linear-regression</id><content type="html" xml:base="http://localhost:4000/2025/10/16/life-is-linear-regression.html"><![CDATA[<p>When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-17T00:26:32+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Everything in Life is Linear Regression</title><link href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" rel="alternate" type="text/html" title="Everything in Life is Linear Regression" /><published>2025-10-16T00:00:00+05:30</published><updated>2025-10-16T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/16/life-is-linear-regression</id><content type="html" xml:base="http://localhost:4000/2025/10/16/life-is-linear-regression.html"><![CDATA[<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image1.png" alt="Everything in Life is Linear Regression" />
+  <figcaption>Life's complexities can be understood through the lens of weighted combinations</figcaption>
+</figure>
+
+<p>When I started learning ML, I was first introduced to Linear Regression. In short, it describes an algorithm where you can model a function using a linear expression:</p>
 
 <p><strong>y = wx + c</strong></p>
 
@@ -19,6 +24,11 @@
 <h3 id="for-example">For example:</h3>
 
 <p>Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently “making you late” by asking you to eat breakfast before leaving. But this is <strong>black-and-white thinking</strong> — sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.</p>
+
+<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image2.png" alt="Multiple factors contributing to missing a train" />
+  <figcaption>Missing the train isn't about one factor — it's a weighted combination of breakfast delay, waking up late, traffic, and more</figcaption>
+</figure>
 
 <p>If I were to put it in the equation:</p>
 
@@ -69,6 +79,11 @@
 <p>Ever since I started viewing life through this lens — not the <em>linear</em> part of Linear Regression, but the <em>weighted combination</em> part — I’ve become less judgmental, more curious, and surprisingly more forgiving.</p>
 
 <p>Because nothing “just happens.”</p>
+
+<figure>
+  <img src="/assets/images/2025-10-16-life-is-linear-regression/image3.png" alt="Life as a sum of weighted factors" />
+  <figcaption>Every outcome in life is the sum of multiple factors, each with its own weight — plus a bit of randomness</figcaption>
+</figure>
 
 <p><strong>Outcome = Σ (all factors × their weights) + some randomness</strong></p>
 
