@@ -76,125 +76,48 @@
   </header>
 
   <div class="project-content">
-    <h2 id="overview">Overview</h2>
+    <p>Frame AI is an AI-powered photography assistant that helps bridge the gap between taking photos and knowing how to improve them. It analyzes images using vision LLMs to check alignment with photography principles, then generates enhanced variations using Google’s nano-banana model.</p>
 
-<p>Frame AI is an AI-powered photography assistant that bridges the gap between taking photos and knowing how to improve them. It analyzes images using vision LLMs (Gemini Flash) to check alignment with widely accepted photography principles, and enhances images using Google’s nano-banana model.</p>
-
-<p><img src="/assets/images/2025-10-20-frame-ai/app-1.png" alt="Frame AI Interface" /></p>
-
-<h2 id="the-problem">The Problem</h2>
-
-<p>As a mobile photography enthusiast, I often take photos trying to apply principles like rule of thirds, leading lines, and proper lighting. But more often than not, I’m not sure if I’m applying them correctly or how to improve my shots.</p>
-
-<h2 id="the-solution">The Solution</h2>
-
-<p>Frame AI provides:</p>
-
-<ol>
-  <li><strong>Intelligent Analysis</strong>: Evaluates photos against photography best practices</li>
-  <li><strong>Actionable Feedback</strong>: Clear, bullet-pointed suggestions on what’s working and what’s not</li>
-  <li><strong>AI-Powered Enhancement</strong>: Generates three variations of enhanced images using nano-banana</li>
-</ol>
-
-<h2 id="technical-architecture">Technical Architecture</h2>
-
-<h3 id="high-level-flow">High-Level Flow</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User Upload → FastAPI Backend → Image Processing &amp; Caching →
-LLM Analysis → Database Storage → Enhancement Trigger →
-3 Prompts Generated → 3 Images via nano-banana
-</code></pre></div></div>
-
-<h3 id="key-components">Key Components</h3>
-
-<ul>
-  <li><strong>Backend</strong>: FastAPI for fast, async API endpoints</li>
-  <li><strong>Database</strong>: SQLite for lightweight data persistence</li>
-  <li><strong>LLM Integration</strong>: Gemini Flash models for image analysis</li>
-  <li><strong>Image Generation</strong>: nano-banana for AI-powered enhancements</li>
-  <li><strong>Caching</strong>: Hash-based image caching for performance optimization</li>
-</ul>
-
-<p><img src="/assets/images/2025-10-20-frame-ai/system-design.png" alt="System Design" /></p>
-
-<h2 id="key-design-decisions">Key Design Decisions</h2>
-
-<h3 id="1-separate-instruction-generation">1. Separate Instruction Generation</h3>
-
-<p>Instead of passing analysis directly to nano-banana, I generate three separate prompts focusing on different aspects of the feedback. This produces more precise, actionable edits since nano-banana excels at following clear instructions rather than reasoning.</p>
-
-<h3 id="2-image-caching-strategy">2. Image Caching Strategy</h3>
-
-<p>Implemented hash-based caching using file contents to avoid redundant LLM calls and improve performance. This significantly reduces API costs for repeat analyses.</p>
-
-<h3 id="3-three-variation-approach">3. Three-Variation Approach</h3>
-
-<p>Generate three different enhanced versions to provide variety and let users choose what works best for their vision.</p>
-
-<h2 id="example-results">Example Results</h2>
-
-<div class="image-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;">
+<div class="image-grid">
   <figure>
     <img src="/assets/images/2025-10-20-frame-ai/og_image.png" alt="Original photo" />
     <figcaption>Original</figcaption>
   </figure>
   <figure>
     <img src="/assets/images/2025-10-20-frame-ai/var1.png" alt="Enhanced variation 1" />
-    <figcaption>Variation 1</figcaption>
+    <figcaption>Enhanced Variation 1</figcaption>
   </figure>
   <figure>
     <img src="/assets/images/2025-10-20-frame-ai/var2.png" alt="Enhanced variation 2" />
-    <figcaption>Variation 2</figcaption>
+    <figcaption>Enhanced Variation 2</figcaption>
   </figure>
   <figure>
     <img src="/assets/images/2025-10-20-frame-ai/var3.png" alt="Enhanced variation 3" />
-    <figcaption>Variation 3</figcaption>
+    <figcaption>Enhanced Variation 3</figcaption>
   </figure>
 </div>
 
+<h2 id="key-features">Key Features</h2>
+
+<ul>
+  <li><strong>Intelligent Analysis</strong>: Evaluates photos against photography best practices (rule of thirds, lighting, composition)</li>
+  <li><strong>AI-Powered Enhancement</strong>: Generates three variations of enhanced images</li>
+  <li><strong>Smart Caching</strong>: Hash-based image caching for performance and cost optimization</li>
+</ul>
+
+<h2 id="technical-highlights">Technical Highlights</h2>
+
+<p>The system uses a FastAPI backend with SQLite for data persistence. Image analysis is handled by Gemini Flash models, which provide detailed compositional feedback. A key design decision was generating separate enhancement prompts for nano-banana rather than passing raw analysis—this produces more precise edits since nano-banana excels at following clear instructions.</p>
+
+<p>The architecture implements hash-based caching to avoid redundant LLM calls, significantly reducing API costs for repeat analyses.</p>
+
 <h2 id="what-i-learned">What I Learned</h2>
 
-<ul>
-  <li><strong>LLM Prompting Nuances</strong>: How to structure prompts for specific, actionable outputs</li>
-  <li><strong>System Design for AI Apps</strong>: Building reliable, cost-effective AI-powered systems</li>
-  <li><strong>Caching Strategies</strong>: When and how caching matters for performance</li>
-  <li><strong>Product Iteration</strong>: Knowing when to add features and when to remove them</li>
-  <li><strong>AI Limitations</strong>: Understanding what AI is good at vs. where it needs help</li>
-</ul>
+<p>Building Frame AI taught me about LLM prompting nuances, system design for AI-powered applications, and the importance of caching strategies. I also learned when to add features and—just as importantly—when to remove them.</p>
 
-<h2 id="tech-stack-details">Tech Stack Details</h2>
+<hr />
 
-<ul>
-  <li><strong>Backend</strong>: FastAPI (async Python web framework)</li>
-  <li><strong>Database</strong>: SQLite (lightweight, file-based)</li>
-  <li><strong>AI Models</strong>:
-    <ul>
-      <li>gemini-2.5-flash (main analysis)</li>
-      <li>gemini-2.5-flash-lite (quick operations)</li>
-      <li>gemini-2.5-flash-image (image understanding)</li>
-      <li>nano-banana (image generation)</li>
-    </ul>
-  </li>
-  <li><strong>Deployment</strong>: TBD</li>
-</ul>
-
-<h2 id="future-improvements">Future Improvements</h2>
-
-<ul>
-  <li>Batch processing for multiple images</li>
-  <li>User style preferences and learning</li>
-  <li>Mobile app integration</li>
-  <li>Community sharing features</li>
-  <li>Advanced editing controls</li>
-</ul>
-
-<h2 id="links">Links</h2>
-
-<ul>
-  <li><a href="/2025/10/20/frame-ai.html">Read the full blog post</a></li>
-  <li><a href="#">Try the demo</a> (Coming soon)</li>
-  <li><a href="#">View source code</a> (Coming soon)</li>
-</ul>
+<p><a href="/2025/10/20/frame-ai.html">Read the full blog post →</a></p>
 
   </div>
 
