@@ -105,7 +105,7 @@
 
 <p><strong>High-level architecture:</strong></p>
 
-<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis (with 3 separate generations) → Edit instruction generation → Response delivery</p>
+<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis → Stored in DB -&gt; Enhance Image Trigger → 3 prompts generated for analysis → 3 Images generated using nano-banana</p>
 
 <p><strong>Key components:</strong></p>
 
@@ -121,7 +121,7 @@
   <figcaption>Clean architectural overview of Frame AI</figcaption>
 </figure>
 
-<p>[Expand on each component and how they interact]</p>
+<p>As mentioned earlier the product has two main parts - image analysis and</p>
 
 <hr />
 
