@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Frame AI | Bejay’s Website</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Frame AI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation." />
+<meta property="og:description" content="An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation." />
+<link rel="canonical" href="http://localhost:4000/projects/frame-ai/" />
+<meta property="og:url" content="http://localhost:4000/projects/frame-ai/" />
+<meta property="og:site_name" content="Bejay’s Website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-20T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Frame AI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-20T00:00:00+05:30","datePublished":"2025-10-20T00:00:00+05:30","description":"An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation.","headline":"Frame AI","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/frame-ai/"},"url":"http://localhost:4000/projects/frame-ai/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=46d100310e34d3510339a0c1bc9f5bef52f248c9">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="container">
+      <header class="site-header" role="banner">
+  <nav class="top-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-link">about</a>
+    <a href="/blog/" class="nav-link">blog</a>
+    <a href="/projects/" class="nav-link">projects</a>
+    <div class="nav-icons">
+      <span class="theme-icon">🌙</span>
+    </div>
+  </nav>
+</header>
+
+      <main id="main-content" class="main-content" role="main">
+        <article class="project-article">
+  <header class="project-header">
+    <h1 class="project-title">Frame AI</h1>
+    <div class="project-meta">
+      <span class="project-date">October 2025</span>
+      
+      <span class="project-tech">FastAPI · Python · Gemini Flash · nano-banana · SQLite</span>
+      
+    </div>
+    
+    <div class="project-links">
+      
+      <a href="#" target="_blank" class="project-link demo-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+        </svg>
+        Live Demo
+      </a>
+      
+      
+      <a href="#" target="_blank" class="project-link github-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Source Code
+      </a>
+      
+    </div>
+    
+  </header>
+
+  <div class="project-content">
+    <h2 id="overview">Overview</h2>
+
+<p>Frame AI is an AI-powered photography assistant that bridges the gap between taking photos and knowing how to improve them. It analyzes images using vision LLMs (Gemini Flash) to check alignment with widely accepted photography principles, and enhances images using Google’s nano-banana model.</p>
+
+<p><img src="/assets/images/2025-10-20-frame-ai/app-1.png" alt="Frame AI Interface" /></p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>As a mobile photography enthusiast, I often take photos trying to apply principles like rule of thirds, leading lines, and proper lighting. But more often than not, I’m not sure if I’m applying them correctly or how to improve my shots.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>Frame AI provides:</p>
+
+<ol>
+  <li><strong>Intelligent Analysis</strong>: Evaluates photos against photography best practices</li>
+  <li><strong>Actionable Feedback</strong>: Clear, bullet-pointed suggestions on what’s working and what’s not</li>
+  <li><strong>AI-Powered Enhancement</strong>: Generates three variations of enhanced images using nano-banana</li>
+</ol>
+
+<h2 id="technical-architecture">Technical Architecture</h2>
+
+<h3 id="high-level-flow">High-Level Flow</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User Upload → FastAPI Backend → Image Processing &amp; Caching →
+LLM Analysis → Database Storage → Enhancement Trigger →
+3 Prompts Generated → 3 Images via nano-banana
+</code></pre></div></div>
+
+<h3 id="key-components">Key Components</h3>
+
+<ul>
+  <li><strong>Backend</strong>: FastAPI for fast, async API endpoints</li>
+  <li><strong>Database</strong>: SQLite for lightweight data persistence</li>
+  <li><strong>LLM Integration</strong>: Gemini Flash models for image analysis</li>
+  <li><strong>Image Generation</strong>: nano-banana for AI-powered enhancements</li>
+  <li><strong>Caching</strong>: Hash-based image caching for performance optimization</li>
+</ul>
+
+<p><img src="/assets/images/2025-10-20-frame-ai/system-design.png" alt="System Design" /></p>
+
+<h2 id="key-design-decisions">Key Design Decisions</h2>
+
+<h3 id="1-separate-instruction-generation">1. Separate Instruction Generation</h3>
+
+<p>Instead of passing analysis directly to nano-banana, I generate three separate prompts focusing on different aspects of the feedback. This produces more precise, actionable edits since nano-banana excels at following clear instructions rather than reasoning.</p>
+
+<h3 id="2-image-caching-strategy">2. Image Caching Strategy</h3>
+
+<p>Implemented hash-based caching using file contents to avoid redundant LLM calls and improve performance. This significantly reduces API costs for repeat analyses.</p>
+
+<h3 id="3-three-variation-approach">3. Three-Variation Approach</h3>
+
+<p>Generate three different enhanced versions to provide variety and let users choose what works best for their vision.</p>
+
+<h2 id="example-results">Example Results</h2>
+
+<div class="image-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;">
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/og_image.png" alt="Original photo" />
+    <figcaption>Original</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var1.png" alt="Enhanced variation 1" />
+    <figcaption>Variation 1</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var2.png" alt="Enhanced variation 2" />
+    <figcaption>Variation 2</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var3.png" alt="Enhanced variation 3" />
+    <figcaption>Variation 3</figcaption>
+  </figure>
+</div>
+
+<h2 id="what-i-learned">What I Learned</h2>
+
+<ul>
+  <li><strong>LLM Prompting Nuances</strong>: How to structure prompts for specific, actionable outputs</li>
+  <li><strong>System Design for AI Apps</strong>: Building reliable, cost-effective AI-powered systems</li>
+  <li><strong>Caching Strategies</strong>: When and how caching matters for performance</li>
+  <li><strong>Product Iteration</strong>: Knowing when to add features and when to remove them</li>
+  <li><strong>AI Limitations</strong>: Understanding what AI is good at vs. where it needs help</li>
+</ul>
+
+<h2 id="tech-stack-details">Tech Stack Details</h2>
+
+<ul>
+  <li><strong>Backend</strong>: FastAPI (async Python web framework)</li>
+  <li><strong>Database</strong>: SQLite (lightweight, file-based)</li>
+  <li><strong>AI Models</strong>:
+    <ul>
+      <li>gemini-2.5-flash (main analysis)</li>
+      <li>gemini-2.5-flash-lite (quick operations)</li>
+      <li>gemini-2.5-flash-image (image understanding)</li>
+      <li>nano-banana (image generation)</li>
+    </ul>
+  </li>
+  <li><strong>Deployment</strong>: TBD</li>
+</ul>
+
+<h2 id="future-improvements">Future Improvements</h2>
+
+<ul>
+  <li>Batch processing for multiple images</li>
+  <li>User style preferences and learning</li>
+  <li>Mobile app integration</li>
+  <li>Community sharing features</li>
+  <li>Advanced editing controls</li>
+</ul>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="/2025/10/20/frame-ai.html">Read the full blog post</a></li>
+  <li><a href="#">Try the demo</a> (Coming soon)</li>
+  <li><a href="#">View source code</a> (Coming soon)</li>
+</ul>
+
+  </div>
+
+  <div class="project-footer">
+    <a href="/projects/" class="back-link">← Back to Projects</a>
+  </div>
+</article>
+
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+  <div class="social-icons">
+    <a href="mailto:bejay.ketan1@gmail.com" class="social-icon" aria-label="Email">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/BKG123" target="_blank" class="social-icon" aria-label="GitHub">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/bejay-ketan-guin-67970018a" target="_blank" class="social-icon" aria-label="LinkedIn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+    <a href="https://x.com/bkguin" target="_blank" class="social-icon" aria-label="Twitter">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+  </div>
+  <p class="footer-text">Best way to reach me is to drop a note to my gmail.</p>
+</footer>
+    </div>
+
+    <script src="/assets/js/theme.js"></script>
+  </body>
+</html>
