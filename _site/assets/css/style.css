@@ -48,6 +48,13 @@ img { max-width: 100%; height: auto; border-radius: 0.5rem; }
 @media (max-width: 768px) { .post-content figure:first-of-type { max-width: 90%; margin-top: 2rem; margin-bottom: 2rem; } }
 .post-content img:not(figure img) { display: block; margin: 2rem auto; max-width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
 @media (max-width: 768px) { .post-content img:not(figure img) { margin: 1.5rem auto; } }
+.post-content .image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem auto; max-width: 95%; }
+@media (max-width: 768px) { .post-content .image-grid { grid-template-columns: 1fr; gap: 1.5rem; max-width: 100%; } }
+.post-content .image-grid figure { margin: 0; max-width: 100%; }
+.post-content .image-grid figure img { width: 100%; height: auto; object-fit: contain; }
+@media (max-width: 768px) { .post-content .image-grid figure img { width: 100%; } }
+.post-content .image-grid figure figcaption { font-size: 0.85rem; padding: 0.5rem; }
+@media (max-width: 768px) { .post-content .image-grid figure figcaption { font-size: 0.75rem; } }
 
 .container { width: 90%; max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
 @media (min-width: 1200px) { .container { width: 85%; } }
