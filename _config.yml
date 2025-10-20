@@ -20,6 +20,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 # Exclude from processing
 exclude:
   - .sass-cache/

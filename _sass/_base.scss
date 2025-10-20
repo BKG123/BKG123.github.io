@@ -176,7 +176,7 @@ img {
 
   // Hero figure (first figure)
   figure:first-of-type {
-    max-width: 75%;
+    max-width: 95%;
     margin-top: $spacer-2xl;
     margin-bottom: $spacer-2xl;
 
@@ -202,6 +202,45 @@ img {
 
     @media (max-width: 768px) {
       margin: $spacer-md auto;
+    }
+  }
+
+  // Image grid for multiple images
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacer-lg;
+    margin: $spacer-xl auto;
+    max-width: 95%;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: $spacer-md;
+      max-width: 100%;
+    }
+
+    figure {
+      margin: 0;
+      max-width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      figcaption {
+        font-size: 0.85rem;
+        padding: $spacer-sm;
+
+        @media (max-width: 768px) {
+          font-size: 0.75rem;
+        }
+      }
     }
   }
 }

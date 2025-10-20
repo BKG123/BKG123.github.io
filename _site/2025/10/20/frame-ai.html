@@ -24,7 +24,7 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bejay"},"dateModified":"2025-10-20T00:00:00+05:30","datePublished":"2025-10-20T00:00:00+05:30","description":"How I built an AI system that analyzes and enhances photos while teaching me.","headline":"Frame AI: Building an AI-Powered Photography Assistant","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/10/20/frame-ai.html"},"url":"http://localhost:4000/2025/10/20/frame-ai.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=88f2786393bd645b077b018f5ea9596459e7d737">
+    <link rel="stylesheet" href="/assets/css/style.css?v=46d100310e34d3510339a0c1bc9f5bef52f248c9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
   <nav class="top-nav" role="navigation" aria-label="Main navigation">
     <a href="/" class="nav-link">about</a>
     <a href="/blog/" class="nav-link">blog</a>
-    <a href="#projects" class="nav-link">projects</a>
+    <a href="/projects/" class="nav-link">projects</a>
     <div class="nav-icons">
       <span class="theme-icon">🌙</span>
     </div>
@@ -71,8 +71,8 @@
 </ul>
 
 <figure>
-  <img src="/assets/images/2025-10-20-frame-ai/before-after-comparison.png" alt="Before and after photo comparison" />
-  <figcaption>A casual before/after comparison showing Frame AI's enhancement</figcaption>
+  <img src="/assets/images/2025-10-20-frame-ai/app-1.png" alt="Sample app image" />
+  <figcaption>Frame AI Home</figcaption>
 </figure>
 
 <hr />
@@ -105,12 +105,12 @@
 
 <p><strong>High-level architecture:</strong></p>
 
-<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis (with 3 separate generations) → Edit instruction generation → Response delivery</p>
+<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis → Stored in DB -&gt; Enhance Image Trigger → 3 prompts generated for analysis → 3 Images generated using nano-banana</p>
 
 <p><strong>Key components:</strong></p>
 
 <ul>
-  <li><strong>Database</strong>: Sqilite</li>
+  <li><strong>Database</strong>: Sqlite</li>
   <li><strong>LLM Integration</strong>: Using Gemini Flash Models (“gemini-2.5-flash”, “gemini-2.5-flash-lite”, “gemini-2.5-flash-image”)</li>
   <li><strong>Caching Strategy</strong>: Why images being cached matters (performance + cost)</li>
   <li><strong>API Design</strong>: RESTful endpoints for upload, analyze, edit</li>
@@ -121,7 +121,23 @@
   <figcaption>Clean architectural overview of Frame AI</figcaption>
 </figure>
 
-<p>[Expand on each component and how they interact]</p>
+<p>As mentioned earlier the product has two main parts - image analysis and image enhancements.</p>
+
+<p>Image Analysis:</p>
+<ul>
+  <li>
+    <p>FE calls the upload api with image file</p>
+  </li>
+  <li>
+    <p>In BE</p>
+    <ul>
+      <li>A hash is created using the contents of the file.</li>
+      <li>The image file is stored in memory with the hash as the filename.</li>
+      <li>A temporary file is created for analysis.</li>
+      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
@@ -169,11 +185,27 @@
 
 <p>What I learned: [Your insights]</p>
 
-<figure>
-  <img src="/assets/images/2025-10-20-frame-ai/visual-diff.png" alt="Side-by-side showing what changed" />
-  <figcaption>Visual diff showing exactly what was edited</figcaption>
-</figure>
+<div class="image-grid">
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/og_image.png" alt="Original photo" />
+    <figcaption>Original</figcaption>
+  </figure>
 
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var1.png" alt="Enhanced variation 1" />
+    <figcaption>Variation 1</figcaption>
+  </figure>
+
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var2.png" alt="Enhanced variation 2" />
+    <figcaption>Variation 2</figcaption>
+  </figure>
+
+  <figure>
+    <img src="/assets/images/2025-10-20-frame-ai/var3.png" alt="Enhanced variation 3" />
+    <figcaption>Variation 3</figcaption>
+  </figure>
+</div>
 <hr />
 
 <h2 id="technical-challenges--solutions">Technical Challenges &amp; Solutions</h2>
