@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T22:22:59+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T23:02:25+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
 
 <p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like gemini-2.5-flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google stealthily launched nano-banana — a revolution in closed-model image generation. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using nano-banana.</p>
 
@@ -73,7 +73,27 @@
       <li>A hash is created using the contents of the file.</li>
       <li>The image file is stored in memory with the hash as the filename.</li>
       <li>A temporary file is created for analysis.</li>
-      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the</li>
+      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the prompt</li>
+      <li>The LLM outputs a detailed analysis along with scores.</li>
+      <li>This “Detailed Analysis” is parsed and shown in the frontend.</li>
+      <li>Another LLM call is made to output a “Quick Analysis” which is shown in a diff tab</li>
+      <li>Both the analyses are stored in SQLite db against the file hash and the value is returned to FE, along with the file hash</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Image Enhancement</p>
+<ul>
+  <li>
+    <p>FE calls the image enhancement API with file hash</p>
+  </li>
+  <li>
+    <p>In BE</p>
+    <ul>
+      <li>The analysis is fetched using the file hash.</li>
+      <li>From the analysis, 3 prompts are generated using LLM call (nano banana best practices are passed as context)</li>
+      <li>Using the 3 prompts, 3 parallel calls are made to nano banana api to generate 3 images and corresponding text outputs saying what changes were made</li>
+      <li>These text outputs are passed through 3 llm calls to structure the output into json</li>
     </ul>
   </li>
 </ul>
@@ -84,15 +104,22 @@
 
 <h3 id="decision-1-image-caching">Decision 1: Image Caching</h3>
 
-<p>Why it’s critical: [Your reasoning about repeat analyses, cost optimization]</p>
+<p>Why it’s critical:</p>
+<ul>
+  <li>Caching of analysis is mostly necessary as I wanted to reuse it for enhancement.</li>
+</ul>
 
-<p>How I implemented it: [Your implementation details]</p>
-
-<p>Performance gains observed: [Your metrics/observations]</p>
+<p>How I implemented it:</p>
+<ul>
+  <li>Frist tried with only filename + ip based caching but it was not that robust for same filename different image cases. Also didn’t want to store PII</li>
+</ul>
 
 <h3 id="decision-2-three-separate-generations-for-analysis">Decision 2: Three Separate Generations for Analysis</h3>
 
-<p>Why not just one? [Your reasoning]</p>
+<p>Why not just one?</p>
+<ul>
+  <li>Enhancement of image is highly subjective, so it’s better to have 3 different outputs instead of 1</li>
+</ul>
 
 <p>Temperature, diversity, and picking the best output. [Your approach]</p>
 
@@ -208,7 +235,7 @@
 
 <p>[Your closing thoughts]</p>
 
-<p><strong>Try it, break it, let me know what you think</strong>: [Your contact/link]</p>
+<p><strong>Try it, break it, let me know what you think</strong>: [https://frame-ai.bejayketanguin.com/]</p>
 
 <figure>
   <img src="/assets/images/2025-10-20-frame-ai/hero-app.png" alt="Frame AI in action" />
