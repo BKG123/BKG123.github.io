@@ -191,13 +191,16 @@
 
 <p>Initial approach: Earlier I was passing the analysis directly to the nano banana generation prompt but the output wasn’t that good. So I separately made llm call to generate prompt</p>
 
-<p>Why I split them:  My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate. And by visual inspection, the outputs have been much better.</p>
+<p>Why I split them:  My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate.</p>
 
-<p>Nano banana prompting technique:  For the prompt generation passed the <a href="https://ai.google.dev/gemini-api/docs/image-generation#best-practices">Nano Banana Best Practices as context</a></p>
+<p>Nano banana prompting technique:  For the prompt generation passed the <a href="https://ai.google.dev/gemini-api/docs/image-generation#best-practices" target="_blank" rel="noopener noreferrer">Nano Banana Best Practices as context</a></p>
 
-<p>Results: More precise, actionable edits. [Your observations]</p>
+<p>Results: More precise, actionable edits.</p>
+<ul>
+  <li>The edits were more subtle but comprehensible</li>
+</ul>
 
-<h3 id="decision-4-what-not-to-do">Decision 4: What NOT to Do</h3>
+<h3 id="decision-4-what-not-to-do-negative-prompting">Decision 4: What NOT to Do. Negative prompting</h3>
 
 <ul>
   <li>Don’t add objects that weren’t there (authenticity matters)</li>
@@ -207,16 +210,28 @@
 
 <h3 id="trade-offs-cost-vs-quality">Trade-offs (cost vs. quality):</h3>
 <ul>
-  <li>As of now for image</li>
+  <li>As of now, I haven’t though much about cost.</li>
+  <li>Made as many llm calls.</li>
+  <li>Idea is to get best results and then optimise for cost.</li>
+  <li>Some ideas involve
+    <ul>
+      <li>Not making llm calls for json - instead use markdown parsers</li>
+      <li>Some changes can be made using python tools instead of image generation</li>
+      <li>Later: Finetune some opensource model and use it</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="the-metric-saga">The Metric Saga</h3>
 
 <p>Added metrics tracking. Then removed it.</p>
 
-<p>Why? [Your reasoning about feature bloat]</p>
+<p>Why?</p>
+<ul>
+  <li>Had tried to give some quantitative insights. Used LLMs to search for metrics like sharpness, color compositions.</li>
+</ul>
 
-<p>What I learned: [Your insights]</p>
+<p>What I learned: I learned that it made no sense as image generated is completely new. So metrics might be coming as good but would made no sense.</p>
 
 <div class="image-grid">
   <figure>
@@ -265,8 +280,7 @@
 
 <p><strong>The real wins:</strong></p>
 <ul>
-  <li>Understanding LLM prompting nuances</li>
-  <li>System design for AI-powered apps</li>
+  <li>Understanding LLM prompting nuances in terms of image generation</li>
   <li>Caching strategies that actually matter</li>
   <li>Iteration over perfection</li>
   <li>Knowing when to remove features</li>
@@ -302,7 +316,7 @@
 
 <p>[Your closing thoughts]</p>
 
-<p><strong>Try it, break it, let me know what you think</strong>: [https://frame-ai.bejayketanguin.com/]</p>
+<p><strong>Try it, break it, let me know what you think</strong>: <a href="https://frame-ai.bejayketanguin.com/" target="_blank" rel="noopener noreferrer">https://frame-ai.bejayketanguin.com/</a></p>
 
 <figure>
   <img src="/assets/images/2025-10-20-frame-ai/hero-app.png" alt="Frame AI in action" />
