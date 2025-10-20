@@ -84,9 +84,13 @@
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
+    document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
+      initLightbox();
+    });
   } else {
     initTheme();
+    initLightbox();
   }
 
   // Expose theme functions globally if needed
@@ -98,4 +102,75 @@
       applyTheme(theme);
     }
   };
+  
+  // Simple image lightbox
+  function initLightbox() {
+    // Create overlay once
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Image preview');
+    
+    var img = document.createElement('img');
+    img.className = 'lightbox-image';
+    img.alt = '';
+    
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Close image preview');
+    closeBtn.textContent = '×';
+    
+    overlay.appendChild(img);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+    
+    function openLightbox(src, alt) {
+      img.src = src;
+      img.alt = alt || '';
+      overlay.classList.add('is-visible');
+      // Prevent background scroll
+      document.documentElement.style.overflow = 'hidden';
+      // Focus trap start
+      closeBtn.focus();
+    }
+    
+    function closeLightbox() {
+      overlay.classList.remove('is-visible');
+      img.src = '';
+      document.documentElement.style.overflow = '';
+    }
+    
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay || e.target === closeBtn) {
+        closeLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (overlay.classList.contains('is-visible') && (e.key === 'Escape' || e.key === 'Esc')) {
+        closeLightbox();
+      }
+    });
+    
+    var selectable = document.querySelectorAll('img[data-lightbox]');
+    selectable.forEach(function(el) {
+      el.style.cursor = 'zoom-in';
+      el.addEventListener('click', function() {
+        var src = el.getAttribute('src');
+        var alt = el.getAttribute('alt');
+        openLightbox(src, alt);
+      });
+      el.setAttribute('tabindex', '0');
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          var src = el.getAttribute('src');
+          var alt = el.getAttribute('alt');
+          openLightbox(src, alt);
+        }
+      });
+    });
+  }
 })();

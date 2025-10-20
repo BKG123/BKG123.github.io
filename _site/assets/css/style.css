@@ -193,3 +193,10 @@ input:invalid, textarea:invalid, select:invalid { border-color: #e53e3e; }
 @media (prefers-reduced-motion: reduce) { .content-section:hover { transform: none; }
   .nav-link:hover { transform: none; }
   .social-link:hover { transform: none; } }
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
+
+.lightbox-overlay.is-visible { display: flex; }
+
+.lightbox-image { max-width: 90vw; max-height: 85vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 8px; }
+
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; line-height: 1; color: #fff; background: transparent; border: none; cursor: pointer; }

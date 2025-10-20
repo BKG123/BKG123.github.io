@@ -1,4 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-17T00:26:32+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Everything in Life is Linear Regression</title><link href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" rel="alternate" type="text/html" title="Everything in Life is Linear Regression" /><published>2025-10-16T00:00:00+05:30</published><updated>2025-10-16T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/16/life-is-linear-regression</id><content type="html" xml:base="http://localhost:4000/2025/10/16/life-is-linear-regression.html"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T20:24:17+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
+
+<p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like gemini-2.5-flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google stealthily launched nano-banana — a revolution in closed-model image generation. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using nano-banana.</p>
+
+<p><strong>Why build Frame AI as a side project:</strong></p>
+<ul>
+  <li>Bridge the gap between taking photos and knowing how to improve them</li>
+  <li>Explore the AI + photography intersection</li>
+  <li>Build a real learning playground for system design</li>
+</ul>
+
+<figure>
+  <img src="/assets/images/2025-10-20-frame-ai/before-after-comparison.png" alt="Before and after photo comparison" />
+  <figcaption>A casual before/after comparison showing Frame AI's enhancement</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="what-frame-ai-actually-does">What Frame AI Actually Does</h2>
+
+<p><strong>The core idea</strong>: An AI assistant that understands photography principles.</p>
+
+<p>Not just “make it prettier” - actual compositional feedback. There are fixed rules in photography: rule of thirds, leading lines, lighting, balance, and so on. Frame AI analyzes against these principles and suggests improvements.</p>
+
+<p><strong>Two main features:</strong></p>
+
+<ol>
+  <li><strong>Analysis</strong>: What’s working, what’s not, and why</li>
+  <li><strong>Enhancement</strong>: AI-powered edits based on best practices</li>
+</ol>
+
+<p><strong>The interesting twist</strong>: Instructions generated separately -&gt; So basically I make a separate call to LLM to generate 3 prompts from the analysis, each focusing on separate parts of the feedback. It also has access to the best practices of nano banana prompting techniques.</p>
+
+<p>Earlier I was passing the analysis directly to the nano banana generation prompt but the output wasn’t that good. My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate.</p>
+
+<figure>
+  <img src="/assets/images/2025-10-20-frame-ai/quick-analysis.png" alt="Sample analysis output" />
+  <figcaption>Digestible, bullet-pointed feedback that actually helps</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="system-design-how-it-all-fits-together">System Design: How It All Fits Together</h2>
+
+<p><strong>High-level architecture:</strong></p>
+
+<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis (with 3 separate generations) → Edit instruction generation → Response delivery</p>
+
+<p><strong>Key components:</strong></p>
+
+<ul>
+  <li><strong>Database</strong>: Sqilite</li>
+  <li><strong>LLM Integration</strong>: Using Gemini Flash Models (“gemini-2.5-flash”, “gemini-2.5-flash-lite”, “gemini-2.5-flash-image”)</li>
+  <li><strong>Caching Strategy</strong>: Why images being cached matters (performance + cost)</li>
+  <li><strong>API Design</strong>: RESTful endpoints for upload, analyze, edit</li>
+</ul>
+
+<figure>
+  <img src="/assets/images/2025-10-20-frame-ai/system-design.png" alt="System architecture diagram" data-lightbox="image" />
+  <figcaption>Clean architectural overview of Frame AI</figcaption>
+</figure>
+
+<p>[Expand on each component and how they interact]</p>
+
+<hr />
+
+<h2 id="design-decisions--lessons-learned">Design Decisions &amp; Lessons Learned</h2>
+
+<h3 id="decision-1-image-caching">Decision 1: Image Caching</h3>
+
+<p>Why it’s critical: [Your reasoning about repeat analyses, cost optimization]</p>
+
+<p>How I implemented it: [Your implementation details]</p>
+
+<p>Performance gains observed: [Your metrics/observations]</p>
+
+<h3 id="decision-2-three-separate-generations-for-analysis">Decision 2: Three Separate Generations for Analysis</h3>
+
+<p>Why not just one? [Your reasoning]</p>
+
+<p>Temperature, diversity, and picking the best output. [Your approach]</p>
+
+<p>Trade-offs (cost vs. quality): [Your findings]</p>
+
+<h3 id="decision-3-separate-call-for-edit-instructions">Decision 3: Separate Call for Edit Instructions</h3>
+
+<p>Initial approach: Combined analysis + instructions</p>
+
+<p>Why I split them: [Your reasoning]</p>
+
+<p>Nano banana prompting technique: [Your explanation]</p>
+
+<p>Results: More precise, actionable edits. [Your observations]</p>
+
+<h3 id="decision-4-what-not-to-do">Decision 4: What NOT to Do</h3>
+
+<ul>
+  <li>Don’t add objects that weren’t there (authenticity matters)</li>
+  <li>Keep text digestible - no one reads walls of text</li>
+  <li>Focus on enhancement, not transformation</li>
+</ul>
+
+<h3 id="the-metric-saga">The Metric Saga</h3>
+
+<p>Added metrics tracking. Then removed it.</p>
+
+<p>Why? [Your reasoning about feature bloat]</p>
+
+<p>What I learned: [Your insights]</p>
+
+<figure>
+  <img src="/assets/images/2025-10-20-frame-ai/visual-diff.png" alt="Side-by-side showing what changed" />
+  <figcaption>Visual diff showing exactly what was edited</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="technical-challenges--solutions">Technical Challenges &amp; Solutions</h2>
+
+<p><strong>Challenge 1</strong>: MIME type detection for various image formats
+[Your solution]</p>
+
+<p><strong>Challenge 2</strong>: Handling large images efficiently
+[Your solution]</p>
+
+<p><strong>Challenge 3</strong>: Balancing LLM call costs with quality
+[Your solution]</p>
+
+<p><strong>Challenge 4</strong>: Making AI feedback actually useful (not generic)
+[Your solution]</p>
+
+<p>[Optional: Include code snippet or flowchart]</p>
+
+<hr />
+
+<h2 id="what-i-built-vs-what-i-learned">What I Built vs. What I Learned</h2>
+
+<p><strong>The product</strong>: A working AI photography assistant.</p>
+
+<p><strong>The real wins:</strong></p>
+<ul>
+  <li>Understanding LLM prompting nuances</li>
+  <li>System design for AI-powered apps</li>
+  <li>Caching strategies that actually matter</li>
+  <li>Iteration over perfection</li>
+  <li>Knowing when to remove features</li>
+</ul>
+
+<p>[Your personal reflections]</p>
+
+<hr />
+
+<h2 id="whats-next">What’s Next</h2>
+
+<p>Potential improvements:</p>
+<ul>
+  <li>Batch processing</li>
+  <li>Style preferences/learning</li>
+  <li>Mobile app integration</li>
+  <li>Community sharing features</li>
+</ul>
+
+<p>Open questions:</p>
+<ul>
+  <li>How to balance automation with creative control?</li>
+  <li>What makes AI feedback feel “authentic” vs. generic?</li>
+</ul>
+
+<hr />
+
+<h2 id="conclusion-the-side-project-effect">Conclusion: The Side Project Effect</h2>
+
+<p>Started wanting to improve my photos. Ended up learning system design, LLM engineering, and product iteration.</p>
+
+<p>Frame AI isn’t just a tool - it’s a learning artifact.</p>
+
+<p>[Your closing thoughts]</p>
+
+<p><strong>Try it, break it, let me know what you think</strong>: [Your contact/link]</p>
+
+<figure>
+  <img src="/assets/images/2025-10-20-frame-ai/hero-app.png" alt="Frame AI in action" />
+  <figcaption>Frame AI in action</figcaption>
+</figure>]]></content><author><name>Bejay</name></author><summary type="html"><![CDATA[How I built an AI system that analyzes and enhances photos while teaching me.]]></summary></entry><entry><title type="html">Everything in Life is Linear Regression</title><link href="http://localhost:4000/2025/10/16/life-is-linear-regression.html" rel="alternate" type="text/html" title="Everything in Life is Linear Regression" /><published>2025-10-16T00:00:00+05:30</published><updated>2025-10-16T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/16/life-is-linear-regression</id><content type="html" xml:base="http://localhost:4000/2025/10/16/life-is-linear-regression.html"><![CDATA[<figure>
   <img src="/assets/images/2025-10-16-life-is-linear-regression/image1.png" alt="Everything in Life is Linear Regression" />
   <figcaption>Life's complexities can be understood through the lens of weighted combinations</figcaption>
 </figure>
@@ -175,7 +358,7 @@ But AI assisted coding was far from perfect. But it steadily started improving.<
 
 <p>The cursor + claude duo is incredible. But it’s incredible <em>because</em> I know what I’m doing. Without that, it’s just a fancy autocomplete that occasionally leads you off a cliff.</p>
 
-<p>That’s my experience anyway. Your mileage may vary.</p>]]></content><author><name>Bejay</name></author><summary type="html"><![CDATA[My thought dump on AI and coding]]></summary></entry><entry><title type="html">Frame Ai</title><link href="http://localhost:4000/2025/09/02/frame-ai.html" rel="alternate" type="text/html" title="Frame Ai" /><published>2025-09-02T00:00:00+05:30</published><updated>2025-09-02T00:00:00+05:30</updated><id>http://localhost:4000/2025/09/02/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/09/02/frame-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cortex Ai</title><link href="http://localhost:4000/2025/08/20/cortex-ai.html" rel="alternate" type="text/html" title="Cortex Ai" /><published>2025-08-20T00:00:00+05:30</published><updated>2025-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/08/20/cortex-ai</id><content type="html" xml:base="http://localhost:4000/2025/08/20/cortex-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Your Feelings Lie to You (Sometimes)</title><link href="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html" rel="alternate" type="text/html" title="Your Feelings Lie to You (Sometimes)" /><published>2025-04-15T00:00:00+05:30</published><updated>2025-04-15T00:00:00+05:30</updated><id>http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes</id><content type="html" xml:base="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html"><![CDATA[<h2 id="we-are-human-beings-we-feel-things-and-thats-beautiful">We are human beings. We feel things. And that’s beautiful.</h2>
+<p>That’s my experience anyway. Your mileage may vary.</p>]]></content><author><name>Bejay</name></author><summary type="html"><![CDATA[My thought dump on AI and coding]]></summary></entry><entry><title type="html">Cortex Ai</title><link href="http://localhost:4000/2025/08/20/cortex-ai.html" rel="alternate" type="text/html" title="Cortex Ai" /><published>2025-08-20T00:00:00+05:30</published><updated>2025-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/08/20/cortex-ai</id><content type="html" xml:base="http://localhost:4000/2025/08/20/cortex-ai.html"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Your Feelings Lie to You (Sometimes)</title><link href="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html" rel="alternate" type="text/html" title="Your Feelings Lie to You (Sometimes)" /><published>2025-04-15T00:00:00+05:30</published><updated>2025-04-15T00:00:00+05:30</updated><id>http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes</id><content type="html" xml:base="http://localhost:4000/2025/04/15/your-feelings-lie-to-you-sometimes.html"><![CDATA[<h2 id="we-are-human-beings-we-feel-things-and-thats-beautiful">We are human beings. We feel things. And that’s beautiful.</h2>
 
 <p>But we also have a gift from evolution called the prefrontal cortex, the logical center of the brain.
 Pop culture constantly pushes the idea of “follow your heart” or “do what feels right.”
