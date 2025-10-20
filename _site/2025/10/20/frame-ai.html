@@ -179,20 +179,21 @@
 
 <p>Why not just one?</p>
 <ul>
-  <li>Enhancement of image is highly subjective, so it’s better to have 3 different outputs instead of 1</li>
+  <li>Enhancement of image is highly subjective, so it’s better to have 3 different outputs instead of 1. Also the analysis focuses on multiple params and its better to have multiple outputs</li>
 </ul>
 
-<p>Temperature, diversity, and picking the best output. [Your approach]</p>
+<p>Hyperparams:</p>
+<ul>
+  <li>Temperature: Kept temps closer to 0 for most structural things (jsonifaction and stuff) while mainatained 0.3-0.5 for analysis to find a balance between creativity and structure</li>
+</ul>
 
-<p>Trade-offs (cost vs. quality): [Your findings]</p>
+<h3 id="decision-3-separate-call-for-prompt-of-image-generation">Decision 3: Separate Call for prompt of image generation</h3>
 
-<h3 id="decision-3-separate-call-for-edit-instructions">Decision 3: Separate Call for Edit Instructions</h3>
+<p>Initial approach: Earlier I was passing the analysis directly to the nano banana generation prompt but the output wasn’t that good. So I separately made llm call to generate prompt</p>
 
-<p>Initial approach: Combined analysis + instructions</p>
+<p>Why I split them:  My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate. And by visual inspection, the outputs have been much better.</p>
 
-<p>Why I split them: [Your reasoning]</p>
-
-<p>Nano banana prompting technique: [Your explanation]</p>
+<p>Nano banana prompting technique:  For the prompt generation passed the <a href="https://ai.google.dev/gemini-api/docs/image-generation#best-practices">Nano Banana Best Practices as context</a></p>
 
 <p>Results: More precise, actionable edits. [Your observations]</p>
 
@@ -202,6 +203,11 @@
   <li>Don’t add objects that weren’t there (authenticity matters)</li>
   <li>Keep text digestible - no one reads walls of text</li>
   <li>Focus on enhancement, not transformation</li>
+</ul>
+
+<h3 id="trade-offs-cost-vs-quality">Trade-offs (cost vs. quality):</h3>
+<ul>
+  <li>As of now for image</li>
 </ul>
 
 <h3 id="the-metric-saga">The Metric Saga</h3>

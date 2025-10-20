@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T23:02:25+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T23:13:23+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
 
 <p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like gemini-2.5-flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google stealthily launched nano-banana — a revolution in closed-model image generation. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using nano-banana.</p>
 
@@ -118,20 +118,21 @@
 
 <p>Why not just one?</p>
 <ul>
-  <li>Enhancement of image is highly subjective, so it’s better to have 3 different outputs instead of 1</li>
+  <li>Enhancement of image is highly subjective, so it’s better to have 3 different outputs instead of 1. Also the analysis focuses on multiple params and its better to have multiple outputs</li>
 </ul>
 
-<p>Temperature, diversity, and picking the best output. [Your approach]</p>
+<p>Hyperparams:</p>
+<ul>
+  <li>Temperature: Kept temps closer to 0 for most structural things (jsonifaction and stuff) while mainatained 0.3-0.5 for analysis to find a balance between creativity and structure</li>
+</ul>
 
-<p>Trade-offs (cost vs. quality): [Your findings]</p>
+<h3 id="decision-3-separate-call-for-prompt-of-image-generation">Decision 3: Separate Call for prompt of image generation</h3>
 
-<h3 id="decision-3-separate-call-for-edit-instructions">Decision 3: Separate Call for Edit Instructions</h3>
+<p>Initial approach: Earlier I was passing the analysis directly to the nano banana generation prompt but the output wasn’t that good. So I separately made llm call to generate prompt</p>
 
-<p>Initial approach: Combined analysis + instructions</p>
+<p>Why I split them:  My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate. And by visual inspection, the outputs have been much better.</p>
 
-<p>Why I split them: [Your reasoning]</p>
-
-<p>Nano banana prompting technique: [Your explanation]</p>
+<p>Nano banana prompting technique:  For the prompt generation passed the <a href="https://ai.google.dev/gemini-api/docs/image-generation#best-practices">Nano Banana Best Practices as context</a></p>
 
 <p>Results: More precise, actionable edits. [Your observations]</p>
 
@@ -141,6 +142,11 @@
   <li>Don’t add objects that weren’t there (authenticity matters)</li>
   <li>Keep text digestible - no one reads walls of text</li>
   <li>Focus on enhancement, not transformation</li>
+</ul>
+
+<h3 id="trade-offs-cost-vs-quality">Trade-offs (cost vs. quality):</h3>
+<ul>
+  <li>As of now for image</li>
 </ul>
 
 <h3 id="the-metric-saga">The Metric Saga</h3>
