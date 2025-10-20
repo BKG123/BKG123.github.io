@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T21:17:59+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-20T21:35:19+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
 
 <p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like gemini-2.5-flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google stealthily launched nano-banana — a revolution in closed-model image generation. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using nano-banana.</p>
 
@@ -49,7 +49,7 @@
 <p><strong>Key components:</strong></p>
 
 <ul>
-  <li><strong>Database</strong>: Sqilite</li>
+  <li><strong>Database</strong>: Sqlite</li>
   <li><strong>LLM Integration</strong>: Using Gemini Flash Models (“gemini-2.5-flash”, “gemini-2.5-flash-lite”, “gemini-2.5-flash-image”)</li>
   <li><strong>Caching Strategy</strong>: Why images being cached matters (performance + cost)</li>
   <li><strong>API Design</strong>: RESTful endpoints for upload, analyze, edit</li>
@@ -60,7 +60,23 @@
   <figcaption>Clean architectural overview of Frame AI</figcaption>
 </figure>
 
-<p>As mentioned earlier the product has two main parts - image analysis and</p>
+<p>As mentioned earlier the product has two main parts - image analysis and image enhancements.</p>
+
+<p>Image Analysis:</p>
+<ul>
+  <li>
+    <p>FE calls the upload api with image file</p>
+  </li>
+  <li>
+    <p>In BE</p>
+    <ul>
+      <li>A hash is created using the contents of the file.</li>
+      <li>The image file is stored in memory with the hash as the filename.</li>
+      <li>A temporary file is created for analysis.</li>
+      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 

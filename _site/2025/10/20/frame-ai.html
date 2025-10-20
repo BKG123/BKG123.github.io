@@ -110,7 +110,7 @@
 <p><strong>Key components:</strong></p>
 
 <ul>
-  <li><strong>Database</strong>: Sqilite</li>
+  <li><strong>Database</strong>: Sqlite</li>
   <li><strong>LLM Integration</strong>: Using Gemini Flash Models (“gemini-2.5-flash”, “gemini-2.5-flash-lite”, “gemini-2.5-flash-image”)</li>
   <li><strong>Caching Strategy</strong>: Why images being cached matters (performance + cost)</li>
   <li><strong>API Design</strong>: RESTful endpoints for upload, analyze, edit</li>
@@ -121,7 +121,23 @@
   <figcaption>Clean architectural overview of Frame AI</figcaption>
 </figure>
 
-<p>As mentioned earlier the product has two main parts - image analysis and</p>
+<p>As mentioned earlier the product has two main parts - image analysis and image enhancements.</p>
+
+<p>Image Analysis:</p>
+<ul>
+  <li>
+    <p>FE calls the upload api with image file</p>
+  </li>
+  <li>
+    <p>In BE</p>
+    <ul>
+      <li>A hash is created using the contents of the file.</li>
+      <li>The image file is stored in memory with the hash as the filename.</li>
+      <li>A temporary file is created for analysis.</li>
+      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
