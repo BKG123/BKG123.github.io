@@ -6,8 +6,8 @@ description: "An AI-powered photography assistant that analyzes photos and sugge
 tech_stack: "FastAPI · Python · Gemini Flash · nano-banana · SQLite"
 thumbnail: "/assets/images/2025-10-20-frame-ai/app-1.png"
 links:
-  demo: "#"
-  github: "#"
+  demo: "https://frame-ai.bejayketanguin.com/"
+  github: "https://github.com/BKG123/frame-ai"
 ---
 
 Frame AI is an AI-powered photography assistant that helps bridge the gap between taking photos and knowing how to improve them. It analyzes images using vision LLMs to check alignment with photography principles, then generates enhanced variations using Google's nano-banana model.
