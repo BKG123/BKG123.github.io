@@ -4,7 +4,7 @@ title: "Frame AI"
 date: 2025-10-20
 description: "An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation."
 tech_stack: "FastAPI · Python · Gemini Flash · nano-banana · SQLite"
-thumbnail: "/assets/images/2025-10-20-frame-ai/hero-app.png"
+thumbnail: "/assets/images/2025-10-20-frame-ai/app-1.png"
 links:
   demo: "#"
   github: "#"
