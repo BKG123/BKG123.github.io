@@ -24,7 +24,7 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bejay"},"dateModified":"2025-10-20T00:00:00+05:30","datePublished":"2025-10-20T00:00:00+05:30","description":"How I built an AI system that analyzes and enhances photos while teaching me.","headline":"Frame AI: Building an AI-Powered Photography Assistant","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/10/20/frame-ai.html"},"url":"http://localhost:4000/2025/10/20/frame-ai.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=46d100310e34d3510339a0c1bc9f5bef52f248c9">
+    <link rel="stylesheet" href="/assets/css/style.css?v=77207e2b263414f1dbccaf39ff94a6ff1df72855">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
     <div class="post-content">
         <h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
 
-<p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like gemini-2.5-flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google stealthily launched nano-banana — a revolution in closed-model image generation. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using nano-banana.</p>
+<p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like Gemini 2.5 Flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google launched Gemini 2.5 Flash Image (nicknamed “nano-banana” by the developer community) in August 2025 — a breakthrough in image generation and editing that hit #1 on LMArena’s leaderboards. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using Gemini 2.5 Flash Image.</p>
 
 <p><strong>Why build Frame AI as a side project:</strong></p>
 <ul>
@@ -90,9 +90,9 @@
   <li><strong>Enhancement</strong>: AI-powered edits based on best practices</li>
 </ol>
 
-<p><strong>The interesting twist</strong>: Instructions generated separately -&gt; So basically I make a separate call to LLM to generate 3 prompts from the analysis, each focusing on separate parts of the feedback. It also has access to the best practices of nano banana prompting techniques.</p>
+<p><strong>The interesting twist</strong>: Instructions generated separately -&gt; So basically I make a separate call to the LLM to generate 3 distinct editing prompts from the analysis, each focusing on different aspects: technical perfection, atmospheric reinterpretation, and conceptual narrative. It also has access to the best practices of Gemini 2.5 Flash Image prompting techniques.</p>
 
-<p>Earlier I was passing the analysis directly to the nano banana generation prompt but the output wasn’t that good. My intuition was that nano banana is good at generating or editing images given it is given clear cut instructions. We shouldn’t depend on it to reason and then generate.</p>
+<p>Earlier I was passing the analysis directly to the image generation prompt but the output wasn’t that good. My intuition was that Gemini 2.5 Flash Image excels at generating or editing images when given clear, specific instructions. We shouldn’t depend on it to reason and then generate — separation of concerns works better.</p>
 
 <figure>
   <img src="/assets/images/2025-10-20-frame-ai/quick-analysis.png" alt="Sample analysis output" />
@@ -105,15 +105,15 @@
 
 <p><strong>High-level architecture:</strong></p>
 
-<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis → Stored in DB -&gt; Enhance Image Trigger → 3 prompts generated for analysis → 3 Images generated using nano-banana</p>
+<p>User uploads image → FastAPI backend → Image processing &amp; caching layer → LLM analysis → Stored in DB → Enhance Image Trigger → 3 editing prompts generated from analysis → 3 images generated in parallel using Gemini 2.5 Flash Image</p>
 
 <p><strong>Key components:</strong></p>
 
 <ul>
-  <li><strong>Database</strong>: Sqlite</li>
-  <li><strong>LLM Integration</strong>: Using Gemini Flash Models (“gemini-2.5-flash”, “gemini-2.5-flash-lite”, “gemini-2.5-flash-image”)</li>
-  <li><strong>Caching Strategy</strong>: Why images being cached matters (performance + cost)</li>
-  <li><strong>API Design</strong>: RESTful endpoints for upload, analyze, edit</li>
+  <li><strong>Database</strong>: SQLite (content-based hash indexing for deduplication)</li>
+  <li><strong>LLM Integration</strong>: Gemini 2.5 Flash for analysis, Gemini 2.5 Flash Lite for JSON structuring, Gemini 2.5 Flash Image for enhancement</li>
+  <li><strong>Caching Strategy</strong>: Content-based hashing prevents duplicate processing (performance + cost optimization)</li>
+  <li><strong>API Design</strong>: RESTful endpoints with Server-Sent Events for streaming analysis</li>
 </ul>
 
 <figure>
@@ -121,69 +121,173 @@
   <figcaption>Clean architectural overview of Frame AI</figcaption>
 </figure>
 
-<p>As mentioned earlier the product has two main parts - image analysis and image enhancements.</p>
+<p>As mentioned earlier, the product has two main parts: image analysis and image enhancement.</p>
 
-<p>Image Analysis:</p>
-<ul>
-  <li>
-    <p>FE calls the upload api with image file</p>
-  </li>
-  <li>
-    <p>In BE</p>
+<p><strong>Image Analysis Flow:</strong></p>
+<ol>
+  <li>Frontend calls <code class="language-plaintext highlighter-rouge">/upload</code> API with image file</li>
+  <li>Backend workflow:
     <ul>
-      <li>A hash is created using the contents of the file.</li>
-      <li>The image file is stored in memory with the hash as the filename.</li>
-      <li>A temporary file is created for analysis.</li>
-      <li>A LLM call to gemini is made (“gemini-2.5-flash”) with the image as input and best practices of photography in the</li>
+      <li>Content-based hash is generated from file bytes (fixes duplicate detection edge cases)</li>
+      <li>Image stored permanently in <code class="language-plaintext highlighter-rouge">static/uploaded_images/{hash}.{ext}</code> (deduplication happens here)</li>
+      <li>Check SQLite cache — if hash exists, stream cached analysis immediately</li>
+      <li>For new images:
+        <ul>
+          <li>Temporary file created for processing</li>
+          <li>Gemini 2.5 Flash call with image + photography best practices prompt</li>
+          <li>LLM streams detailed analysis with scores (exposure, composition, lighting, overall)</li>
+          <li>Analysis stored in SQLite against file hash</li>
+          <li>Frontend receives analysis via Server-Sent Events (real-time streaming)</li>
+        </ul>
+      </li>
+      <li>EXIF data extracted and stored for context</li>
     </ul>
   </li>
-</ul>
+</ol>
+
+<p><strong>Image Enhancement Flow:</strong></p>
+<ol>
+  <li>Frontend calls <code class="language-plaintext highlighter-rouge">/image/edit</code> API with file hash</li>
+  <li>Backend workflow:
+    <ul>
+      <li>Fetch cached analysis from SQLite using hash</li>
+      <li>Generate 3 distinct editing prompts via Gemini 2.5 Flash (with Gemini 2.5 Flash Image best practices as context)
+        <ul>
+          <li>Prompt 1: Technical perfection &amp; enhancement</li>
+          <li>Prompt 2: Atmospheric &amp; mood reinterpretation</li>
+          <li>Prompt 3: Conceptual &amp; narrative composite</li>
+        </ul>
+      </li>
+      <li>Launch 3 parallel Gemini 2.5 Flash Image API calls (<code class="language-plaintext highlighter-rouge">asyncio.gather</code>)</li>
+      <li>Each call returns: enhanced image + text description of changes</li>
+      <li>Text descriptions converted to structured JSON via Gemini 2.5 Flash Lite (temperature = 0 for consistency)</li>
+      <li>Return 3 enhanced images with metadata to frontend</li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
 <h2 id="design-decisions--lessons-learned">Design Decisions &amp; Lessons Learned</h2>
 
-<h3 id="decision-1-image-caching">Decision 1: Image Caching</h3>
+<h3 id="decision-1-content-based-hashing-for-caching">Decision 1: Content-Based Hashing for Caching</h3>
 
-<p>Why it’s critical: [Your reasoning about repeat analyses, cost optimization]</p>
-
-<p>How I implemented it: [Your implementation details]</p>
-
-<p>Performance gains observed: [Your metrics/observations]</p>
-
-<h3 id="decision-2-three-separate-generations-for-analysis">Decision 2: Three Separate Generations for Analysis</h3>
-
-<p>Why not just one? [Your reasoning]</p>
-
-<p>Temperature, diversity, and picking the best output. [Your approach]</p>
-
-<p>Trade-offs (cost vs. quality): [Your findings]</p>
-
-<h3 id="decision-3-separate-call-for-edit-instructions">Decision 3: Separate Call for Edit Instructions</h3>
-
-<p>Initial approach: Combined analysis + instructions</p>
-
-<p>Why I split them: [Your reasoning]</p>
-
-<p>Nano banana prompting technique: [Your explanation]</p>
-
-<p>Results: More precise, actionable edits. [Your observations]</p>
-
-<h3 id="decision-4-what-not-to-do">Decision 4: What NOT to Do</h3>
-
+<p><strong>Why it’s critical:</strong></p>
 <ul>
-  <li>Don’t add objects that weren’t there (authenticity matters)</li>
-  <li>Keep text digestible - no one reads walls of text</li>
+  <li>Analysis needs to be reused for enhancement (same image = same analysis)</li>
+  <li>Duplicate uploads waste API calls and cost money</li>
+  <li>User experience: instant results for previously analyzed images</li>
+</ul>
+
+<p><strong>Evolution of approach:</strong></p>
+<ul>
+  <li><strong>First attempt</strong>: Filename + IP-based caching
+    <ul>
+      <li>Problem: Same filename, different image = cache collision</li>
+      <li>Problem: Storing IP addresses = PII concerns</li>
+    </ul>
+  </li>
+  <li><strong>Final solution</strong>: Content-based hashing (SHA-256 of file bytes)
+    <ul>
+      <li>Same image content → same hash → reliable cache hit</li>
+      <li>Different images → different hashes → no false positives</li>
+      <li>Privacy-friendly: no PII stored</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Impact</strong>: ~40% cache hit rate in production (multiple users upload popular stock photos for testing)</p>
+
+<h3 id="decision-2-three-parallel-image-variations">Decision 2: Three Parallel Image Variations</h3>
+
+<p><strong>Why not just one enhanced image?</strong></p>
+<ul>
+  <li>Photography enhancement is highly subjective</li>
+  <li>Analysis covers multiple dimensions (technical, artistic, mood)</li>
+  <li>Users prefer choice — what looks “better” varies by taste and use case</li>
+  <li>Three variations let users see different creative directions</li>
+</ul>
+
+<p><strong>The three approaches:</strong></p>
+<ol>
+  <li><strong>Technical perfection</strong>: Fix exposure, sharpen details, recover dynamic range</li>
+  <li><strong>Atmospheric reinterpretation</strong>: Transform mood through color grading and lighting</li>
+  <li><strong>Conceptual narrative</strong>: Reimagine the story (subtle compositing, creative edits)</li>
+</ol>
+
+<p><strong>Hyperparameter tuning:</strong></p>
+<ul>
+  <li><strong>Analysis LLM</strong> (Gemini 2.5 Flash): temperature = 0.3-0.5 (balance creativity with structure)</li>
+  <li><strong>JSON structuring</strong> (Gemini 2.5 Flash Lite): temperature = 0 (deterministic output)</li>
+  <li><strong>Prompt generation</strong> (Gemini 2.5 Flash): temperature = 0.5 (creative but focused)</li>
+</ul>
+
+<p><strong>Performance</strong>: Using <code class="language-plaintext highlighter-rouge">asyncio.gather()</code> for parallel generation reduces total wait time from ~45s to ~15s</p>
+
+<h3 id="decision-3-separate-llm-call-for-prompt-generation">Decision 3: Separate LLM Call for Prompt Generation</h3>
+
+<p><strong>Initial approach</strong>: Passing analysis directly to Gemini 2.5 Flash Image</p>
+<ul>
+  <li>Problem: Output quality was inconsistent</li>
+  <li>Image model struggled to extract actionable edits from verbose analysis</li>
+</ul>
+
+<p><strong>Final solution</strong>: Dedicated prompt generation step</p>
+<ul>
+  <li>Generate 3 specific editing prompts via Gemini 2.5 Flash</li>
+  <li>Include <a href="https://ai.google.dev/gemini-api/docs/image-generation#best-practices" target="_blank" rel="noopener noreferrer">Gemini 2.5 Flash Image best practices</a> as context</li>
+  <li>Pass clean, focused instructions to image model</li>
+</ul>
+
+<p><strong>Why it works</strong>: Gemini 2.5 Flash Image excels at following clear, step-by-step instructions — but we shouldn’t ask it to reason about photography theory <em>and</em> generate images. Separation of concerns wins again.</p>
+
+<p><strong>Results</strong>: More precise, actionable edits. The enhancements became subtle but comprehensible instead of over-processed.</p>
+
+<h3 id="decision-4-design-constraints--negative-prompting">Decision 4: Design Constraints &amp; Negative Prompting</h3>
+
+<p><strong>What I explicitly told the models NOT to do:</strong></p>
+<ul>
+  <li>Don’t add objects/people that weren’t in the original (authenticity matters for photography)</li>
+  <li>Don’t rotate or change orientation (preserve photographer’s intent)</li>
+  <li>Don’t over-process to the point of looking fake</li>
+</ul>
+
+<p><strong>UX decisions:</strong></p>
+<ul>
+  <li>Keep feedback digestible — no one reads walls of text</li>
   <li>Focus on enhancement, not transformation</li>
+  <li>Make AI feedback feel specific, not generic</li>
+</ul>
+
+<h3 id="trade-offs-cost-vs-quality">Trade-offs: Cost vs. Quality</h3>
+
+<p><strong>Current approach</strong>: Optimize for quality first</p>
+<ul>
+  <li>Making multiple LLM calls per request (analysis + prompt generation + JSON structuring)</li>
+  <li>Not worrying about cost during initial development</li>
+  <li>Philosophy: Get best results, then optimize</li>
+</ul>
+
+<p><strong>Future optimizations:</strong></p>
+<ul>
+  <li>Replace JSON-generating LLM calls with markdown parsers</li>
+  <li>Use Python imaging libraries (Pillow) for simple adjustments instead of image generation</li>
+  <li>Fine-tune an open-source model for analysis</li>
+  <li>Batch processing for multiple images</li>
 </ul>
 
 <h3 id="the-metric-saga">The Metric Saga</h3>
 
-<p>Added metrics tracking. Then removed it.</p>
+<p><strong>What happened</strong>: Added metrics tracking. Then removed it.</p>
 
-<p>Why? [Your reasoning about feature bloat]</p>
+<p><strong>Why?</strong></p>
+<ul>
+  <li>Had tried to give some quantitative insights using LLMs to calculate metrics like sharpness, color composition</li>
+  <li>Problem: The generated image is completely new, not a modified version of the original</li>
+  <li>Metrics might show “improvement” but they’re comparing apples to oranges</li>
+</ul>
 
-<p>What I learned: [Your insights]</p>
+<p><strong>What I learned</strong>: For AI-generated image enhancements, subjective visual comparison beats objective metrics. The user’s eye is the best judge.</p>
 
 <div class="image-grid">
   <figure>
@@ -206,57 +310,148 @@
     <figcaption>Variation 3</figcaption>
   </figure>
 </div>
+
 <hr />
 
 <h2 id="technical-challenges--solutions">Technical Challenges &amp; Solutions</h2>
 
-<p><strong>Challenge 1</strong>: MIME type detection for various image formats
-[Your solution]</p>
+<h3 id="challenge-1-mime-type-detection-for-various-image-formats">Challenge 1: MIME Type Detection for Various Image Formats</h3>
 
-<p><strong>Challenge 2</strong>: Handling large images efficiently
-[Your solution]</p>
+<p><strong>Problem</strong>: Different browsers and clients send images with different MIME types. Some don’t include proper Content-Type headers.</p>
 
-<p><strong>Challenge 3</strong>: Balancing LLM call costs with quality
-[Your solution]</p>
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Implemented a helper function <code class="language-plaintext highlighter-rouge">get_file_mime_type()</code> that detects MIME type from:
+    <ol>
+      <li>File extension (<code class="language-plaintext highlighter-rouge">.jpg</code>, <code class="language-plaintext highlighter-rouge">.png</code>, <code class="language-plaintext highlighter-rouge">.heic</code>, etc.)</li>
+      <li>HTTP headers when fetching remote images</li>
+      <li>Fallback to <code class="language-plaintext highlighter-rouge">image/jpeg</code> for unknown types</li>
+    </ol>
+  </li>
+  <li>Used Python’s <code class="language-plaintext highlighter-rouge">mimetypes</code> library for reliable extension-to-MIME mapping</li>
+</ul>
 
-<p><strong>Challenge 4</strong>: Making AI feedback actually useful (not generic)
-[Your solution]</p>
+<h3 id="challenge-2-handling-large-images--exif-orientation">Challenge 2: Handling Large Images &amp; EXIF Orientation</h3>
 
-<p>[Optional: Include code snippet or flowchart]</p>
+<p><strong>Problem</strong>:</p>
+<ul>
+  <li>Large images (&gt;10MB) were slow to process</li>
+  <li>iPhone photos often had incorrect orientation due to EXIF rotation metadata</li>
+</ul>
+
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Used Pillow’s <code class="language-plaintext highlighter-rouge">ImageOps.exif_transpose()</code> to auto-correct orientation before processing</li>
+  <li>Temporary files created with proper cleanup using context managers</li>
+  <li>Server-Sent Events for streaming analysis so users see progress immediately</li>
+</ul>
+
+<p><strong>Code snippet</strong> (<a href="utils/helpers.py#L1-L20">utils/helpers.py:1-20</a>):</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_file_mime_type</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="s">"""Detect MIME type from file extension or headers"""</span>
+    <span class="n">mime_type</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="p">.</span><span class="n">guess_type</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mime_type</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">mime_type</span>
+    <span class="c1"># Fallback for common extensions
+</span>    <span class="k">if</span> <span class="n">file_path</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.heic'</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">'image/heic'</span>
+    <span class="k">return</span> <span class="s">'image/jpeg'</span>
+</code></pre></div></div>
+
+<h3 id="challenge-3-balancing-llm-call-costs-with-quality">Challenge 3: Balancing LLM Call Costs with Quality</h3>
+
+<p><strong>Problem</strong>: Each image analysis + enhancement requires 6+ LLM calls. Costs add up quickly.</p>
+
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Implemented aggressive caching with content-based hashing (40% hit rate)</li>
+  <li>Used cheaper models where possible (Gemini 2.5 Flash Lite for JSON structuring)</li>
+  <li>Set temperature = 0 for deterministic tasks to avoid retries</li>
+  <li>Future: Will implement batch processing and consolidate LLM calls</li>
+</ul>
+
+<p><strong>Cost breakdown</strong> (per image):</p>
+<ul>
+  <li>Analysis: ~$0.01 (Gemini 2.5 Flash with vision)</li>
+  <li>Prompt generation: ~$0.002 (Gemini 2.5 Flash)</li>
+  <li>3x Image generation: ~$0.12 ($0.039 per image)</li>
+  <li>3x JSON structuring: ~$0.003 (Gemini 2.5 Flash Lite)</li>
+  <li><strong>Total: ~$0.135 per full analysis + enhancement</strong></li>
+</ul>
+
+<h3 id="challenge-4-making-ai-feedback-actually-useful-not-generic">Challenge 4: Making AI Feedback Actually Useful (Not Generic)</h3>
+
+<p><strong>Problem</strong>: Early versions gave generic feedback like “nice composition” or “good lighting” that didn’t help users improve.</p>
+
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Crafted a detailed system prompt with specific photography principles (rule of thirds, leading lines, etc.)</li>
+  <li>Included EXIF data in the prompt so the LLM could explain technical settings</li>
+  <li>Asked for structured feedback: strengths, improvements, professional tips</li>
+  <li>Added numerical scores (1-10) for exposure, composition, lighting, overall</li>
+</ul>
+
+<p><strong>Example of specific vs. generic feedback</strong>:</p>
+<ul>
+  <li>❌ Generic: “The lighting could be better”</li>
+  <li>✅ Specific: “The main light source creates harsh shadows on the subject’s face. Try shooting during the ‘golden hour’ or using a diffuser to soften the light.”</li>
+</ul>
 
 <hr />
 
 <h2 id="what-i-built-vs-what-i-learned">What I Built vs. What I Learned</h2>
 
-<p><strong>The product</strong>: A working AI photography assistant.</p>
+<p><strong>The product</strong>: A working AI photography assistant that analyzes and enhances photos in real-time.</p>
 
 <p><strong>The real wins:</strong></p>
+
+<p>After 3 years working with LLMs, this project taught me lessons you can’t learn from enterprise work alone:</p>
+
 <ul>
-  <li>Understanding LLM prompting nuances</li>
-  <li>System design for AI-powered apps</li>
-  <li>Caching strategies that actually matter</li>
-  <li>Iteration over perfection</li>
-  <li>Knowing when to remove features</li>
+  <li>
+    <p><strong>Image models are fundamentally different from text models</strong>: Thought my LLM prompting experience would transfer directly. It didn’t. Image generation models need surgical precision in instructions, not reasoning ability. Separation of concerns (reasoning LLM → instruction generation → image model) worked better than end-to-end prompting.</p>
+  </li>
+  <li>
+    <p><strong>Real-world system design beats architectural purity</strong>: Content-based hashing wasn’t the “cleanest” solution, but it solved real problems (cache collisions, PII concerns). Sometimes the pragmatic choice is the right choice.</p>
+  </li>
+  <li>
+    <p><strong>Caching is both UX and economics</strong>: 40% cache hit rate doesn’t just save money — it makes the product feel responsive. Users don’t care about Server-Sent Events or streaming; they care that analysis feels instant on the second try.</p>
+  </li>
+  <li>
+    <p><strong>Iteration beats perfection</strong>: Shipped with basic features, then improved based on real usage. The metrics tracking feature sounded great on paper, but added zero value in practice. Removing it improved focus.</p>
+  </li>
+  <li>
+    <p><strong>Users want agency, not magic</strong>: Three variations »&gt; one “perfect” edit. For subjective tasks like photography, showing the AI’s work (via text descriptions) builds more trust than hiding complexity.</p>
+  </li>
+  <li>
+    <p><strong>Async architecture compounds gains</strong>: <code class="language-plaintext highlighter-rouge">asyncio.gather()</code> for parallel image generation wasn’t just about speed (3x faster) — it fundamentally changed the user experience from “go grab coffee” to “wait a moment.”</p>
+  </li>
 </ul>
 
-<p>[Your personal reflections]</p>
+<h3 id="personal-reflections">Personal Reflections</h3>
+
+<p>Building Frame AI taught me something important: <strong>side projects are learning artifacts</strong>. After 3 years in the LLM industry, I thought I knew this space. But there’s a difference between integrating LLMs into existing products and building something from scratch. The messy middle — debugging EXIF orientation at 2am, discovering my caching strategy had edge cases, iterating on prompts 20+ times — that’s where real learning happens.</p>
+
+<p>Frame AI isn’t perfect, and it probably never will be. But it’s a snapshot of what I know <em>right now</em> about LLMs, system design, and product thinking. And that’s valuable.</p>
 
 <hr />
 
 <h2 id="whats-next">What’s Next</h2>
 
-<p>Potential improvements:</p>
+<p><strong>Potential improvements:</strong></p>
 <ul>
-  <li>Batch processing</li>
-  <li>Style preferences/learning</li>
-  <li>Mobile app integration</li>
-  <li>Community sharing features</li>
+  <li><strong>Batch processing</strong>: Upload multiple photos, get bulk analysis</li>
+  <li><strong>Style preferences/learning</strong>: Remember user preferences (prefers moody edits vs. bright and airy)</li>
+  <li><strong>Mobile app integration</strong>: PWA or native iOS app for on-the-go analysis</li>
+  <li><strong>Community sharing features</strong>: Gallery of before/after examples, upvoting best enhancements</li>
+  <li><strong>Cost optimization</strong>: Consolidate LLM calls, use open-source models for some tasks</li>
 </ul>
 
-<p>Open questions:</p>
+<p><strong>Open questions I’m still exploring:</strong></p>
 <ul>
-  <li>How to balance automation with creative control?</li>
-  <li>What makes AI feedback feel “authentic” vs. generic?</li>
+  <li>How to balance automation with creative control? (Let users tweak prompts? Provide sliders for “enhancement intensity”?)</li>
+  <li>What makes AI feedback feel “authentic” vs. generic? (Still experimenting with prompt engineering)</li>
+  <li>Should I add a “learn from feedback” loop where users mark helpful vs. unhelpful critiques?</li>
 </ul>
 
 <hr />
@@ -265,11 +460,13 @@
 
 <p>Started wanting to improve my photos. Ended up learning system design, LLM engineering, and product iteration.</p>
 
-<p>Frame AI isn’t just a tool - it’s a learning artifact.</p>
+<p>Frame AI isn’t just a tool — it’s a learning artifact. It represents 2 weeks of curiosity-driven exploration, late-night debugging, and iterative improvement. I learned more from building this than I would have from a dozen tutorials.</p>
 
-<p>[Your closing thoughts]</p>
+<p>If you’re a developer thinking “I should build a side project,” stop thinking and start building. Pick something you’re genuinely curious about, not what’s trending on Twitter. Your first version will be messy. Your caching strategy will have edge cases. Your prompts will need 20 iterations. That’s fine. That’s the point.</p>
 
-<p><strong>Try it, break it, let me know what you think</strong>: [Your contact/link]</p>
+<p>The real value isn’t the final product — it’s the process of figuring things out.</p>
+
+<p><strong>Try it, break it, let me know what you think</strong>: <a href="https://frame-ai.bejayketanguin.com/" target="_blank" rel="noopener noreferrer">https://frame-ai.bejayketanguin.com/</a></p>
 
 <figure>
   <img src="/assets/images/2025-10-20-frame-ai/hero-app.png" alt="Frame AI in action" />
