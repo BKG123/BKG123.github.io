@@ -52,3 +52,7 @@ Interested in GenAI.
 
 - M.Tech in Electronics and Telecommunication Engineering at the IIEST, Shibpur
 - B.Tech in Electronics and Communication Engineering at Techno Main, Salt Lake
+
+## LATEST FROM THE BLOG
+
+[Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html) - How I built an AI system that analyzes and enhances photos while teaching me about system design, LLM integration, and product thinking.

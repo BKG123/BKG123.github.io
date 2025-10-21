@@ -9,6 +9,18 @@
 @import "accessibility";
 @import "projects";
 
+// Scroll progress indicator
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed);
+  z-index: 1001;
+  transition: width 0.1s ease;
+}
+
 // Lightbox styles
 .lightbox-overlay {
   position: fixed;

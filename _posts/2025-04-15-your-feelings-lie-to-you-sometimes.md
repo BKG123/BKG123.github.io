@@ -4,6 +4,7 @@ title: "Your Feelings Lie to You (Sometimes)"
 date: 2025-04-15
 description: "My exploration of how emotions and logic shape our decision-making process"
 author: "Bejay"
+tags: [Reflections]
 acknowledgment: "Original thoughts, polished with a little help from <span style='color: #3182ce; font-weight: 500;'>ChatGPT</span>."
 ---
 

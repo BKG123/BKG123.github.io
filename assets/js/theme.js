@@ -82,15 +82,52 @@
     }
   }
 
+  // Scroll progress indicator
+  function initScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress');
+    const header = document.querySelector('.site-header');
+
+    if (!progressBar) return;
+
+    function updateScrollProgress() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Calculate scroll percentage
+      const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      // Update progress bar
+      progressBar.style.width = scrollPercent + '%';
+
+      // Add shadow to header when scrolled
+      if (header) {
+        if (scrollTop > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    }
+
+    // Update on scroll
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // Initial update
+    updateScrollProgress();
+  }
+
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       initTheme();
       initLightbox();
+      initScrollProgress();
     });
   } else {
     initTheme();
     initLightbox();
+    initScrollProgress();
   }
 
   // Expose theme functions globally if needed

@@ -4,6 +4,7 @@ title: "Coding in the era of LLMs"
 date: 2025-09-21
 description: "My thought dump on AI and coding"
 author: "Bejay"
+tags: [Tech, Reflections]
 acknowledgment: "Original thoughts, polished with a little help from <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
 ---
 

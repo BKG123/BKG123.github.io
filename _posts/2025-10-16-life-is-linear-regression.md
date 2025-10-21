@@ -2,8 +2,9 @@
 layout: post
 title: "Everything in Life is Linear Regression"
 date: 2025-10-16
-description: "Food for thought"
+description: "Why life's complexities are best understood as weighted combinations of multiple factors, not single causes."
 author: "Bejay"
+tags: [Tech, Reflections]
 acknowledgment: "Original thoughts, polished with a little help from <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
 ---
 
