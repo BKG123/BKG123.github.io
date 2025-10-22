@@ -10,7 +10,7 @@ links:
   github: "https://github.com/BKG123/frame-ai"
 ---
 
-Frame AI is an AI-powered photography assistant that helps bridge the gap between taking photos and knowing how to improve them. It analyzes images using vision LLMs to check alignment with photography principles, then generates enhanced variations using Google's nano-banana model.
+Frame AI is an AI-powered photography assistant that bridges the gap between taking photos and knowing how to improve them. It analyzes images using Gemini 2.5 Flash to evaluate photography principles, then generates three distinct enhanced variations using Gemini 2.5 Flash Image (nano-banana).
 
 <div class="image-grid">
   <figure>
@@ -33,19 +33,16 @@ Frame AI is an AI-powered photography assistant that helps bridge the gap betwee
 
 ## Key Features
 
-- **Intelligent Analysis**: Evaluates photos against photography best practices (rule of thirds, lighting, composition)
-- **AI-Powered Enhancement**: Generates three variations of enhanced images
-- **Smart Caching**: Hash-based image caching for performance and cost optimization
+- **Intelligent Analysis**: Detailed compositional feedback with numerical scores (exposure, composition, lighting, overall)
+- **Three Creative Variations**: Technical perfection, atmospheric reinterpretation, and conceptual narrative
+- **Smart Caching**: Content-based hashing (SHA-256) for deduplication and cost optimization
 
 ## Technical Highlights
 
-The system uses a FastAPI backend with SQLite for data persistence. Image analysis is handled by Gemini Flash models, which provide detailed compositional feedback. A key design decision was generating separate enhancement prompts for nano-banana rather than passing raw analysis—this produces more precise edits since nano-banana excels at following clear instructions.
-
-The architecture implements hash-based caching to avoid redundant LLM calls, significantly reducing API costs for repeat analyses.
-
-## What I Learned
-
-Building Frame AI taught me about LLM prompting nuances, system design for AI-powered applications, and the importance of caching strategies. I also learned when to add features and—just as importantly—when to remove them.
+- FastAPI backend with SQLite for persistence and Server-Sent Events for streaming analysis
+- Content-based hashing (SHA-256) enables reliable deduplication while remaining privacy-friendly
+- Separate LLM call generates editing prompts from analysis before passing to nano-banana—produces more precise edits than passing raw analysis directly
+- Parallel image generation using `asyncio.gather` for three simultaneous variations
 
 ---
 
