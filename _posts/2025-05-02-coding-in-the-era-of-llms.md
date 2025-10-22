@@ -88,3 +88,11 @@ Look, I'm not going to tell you how to learn. Maybe you'll figure out your own p
 The cursor + claude duo is incredible. But it's incredible *because* I know what I'm doing. Without that, it's just a fancy autocomplete that occasionally leads you off a cliff.
 
 That's my experience anyway. Your mileage may vary.
+
+---
+
+## More from my blog
+
+- **[Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html)** - How I built an AI system that analyzes and enhances photos while teaching me
+- **[Your Feelings Lie to You (Sometimes)](/2025/04/15/your-feelings-lie-to-you-sometimes.html)** - My exploration of how emotions and logic shape our decision-making process
+- **[Everything in Life is Linear Regression](/2025/10/16/life-is-linear-regression.html)** - Why life's complexities are best understood as weighted combinations of multiple factors

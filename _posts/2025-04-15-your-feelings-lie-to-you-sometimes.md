@@ -77,3 +77,11 @@ Think for a minute longer.
 And then act with all the conviction.
 
 Feel your feelings, but don't be ruled by them.
+
+---
+
+## More from my blog
+
+- **[Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html)** - How I built an AI system that analyzes and enhances photos while teaching me
+- **[Coding in the era of LLMs](/2025/09/21/coding-in-the-era-of-llms.html)** - My thoughts on AI-assisted coding and the importance of learning fundamentals
+- **[Everything in Life is Linear Regression](/2025/10/16/life-is-linear-regression.html)** - Why life's complexities are best understood as weighted combinations of multiple factors
