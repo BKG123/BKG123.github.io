@@ -15,12 +15,21 @@ Frame AI is an AI-powered photography assistant that bridges the gap between tak
 ## Demo
 
 <figure style="margin: 2rem 0;">
-  <video width="100%" controls style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+  <video id="frame-ai-demo" width="100%" controls style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
     <source src="/assets/video/frame-ai.md/frame-ai-demo.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
   <figcaption style="text-align: center; margin-top: 0.5rem; color: #6b7280; font-size: 0.9rem;">Frame AI in action: analyzing a photo and generating enhanced variations</figcaption>
 </figure>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('frame-ai-demo');
+    if (video) {
+      video.playbackRate = 1.5;
+    }
+  });
+</script>
 
 ## Results
 
