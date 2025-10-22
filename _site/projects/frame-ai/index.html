@@ -12,18 +12,18 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation." />
 <meta property="og:description" content="An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation." />
-<link rel="canonical" href="http://localhost:4000/projects/frame-ai/" />
-<meta property="og:url" content="http://localhost:4000/projects/frame-ai/" />
+<link rel="canonical" href="https://bkg123.github.io/projects/frame-ai/" />
+<meta property="og:url" content="https://bkg123.github.io/projects/frame-ai/" />
 <meta property="og:site_name" content="Bejay’s Website" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-10-20T00:00:00+05:30" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Frame AI" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-20T00:00:00+05:30","datePublished":"2025-10-20T00:00:00+05:30","description":"An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation.","headline":"Frame AI","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/frame-ai/"},"url":"http://localhost:4000/projects/frame-ai/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-20T00:00:00+05:30","datePublished":"2025-10-20T00:00:00+05:30","description":"An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation.","headline":"Frame AI","mainEntityOfPage":{"@type":"WebPage","@id":"https://bkg123.github.io/projects/frame-ai/"},"url":"https://bkg123.github.io/projects/frame-ai/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=e8d5496d26e4f977bec258e319ec6f314637e1ac">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e396b4e86c12905f4b2ae11bf1a24f4e3e7057ef">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -82,31 +82,43 @@
 <h2 id="demo">Demo</h2>
 
 <figure style="margin: 2rem 0;">
-  <video width="100%" controls="" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+  <video id="frame-ai-demo" width="100%" controls="" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
     <source src="/assets/video/frame-ai.md/frame-ai-demo.webm" type="video/webm" />
     Your browser does not support the video tag.
   </video>
   <figcaption style="text-align: center; margin-top: 0.5rem; color: #6b7280; font-size: 0.9rem;">Frame AI in action: analyzing a photo and generating enhanced variations</figcaption>
 </figure>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('frame-ai-demo');
+    if (video) {
+      video.playbackRate = 1.5;
+    }
+  });
+</script>
+
 <h2 id="results">Results</h2>
 
 <div class="image-grid">
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/og_image.png" alt="Original photo" style="border: 1px solid #e5e7eb; border-radius: 4px;" />
+    <img src="/assets/images/2025-10-20-frame-ai/og_image.webp" alt="Original photo" />
     <figcaption>Original</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var1.png" alt="Enhanced variation 1" style="border: 1px solid #e5e7eb; border-radius: 4px;" />
-    <figcaption>Variation 1: Technical Perfection</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var1.webp" alt="Enhanced variation 1" />
+    <figcaption>Variation 1</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var2.png" alt="Enhanced variation 2" style="border: 1px solid #e5e7eb; border-radius: 4px;" />
-    <figcaption>Variation 2: Atmospheric Reinterpretation</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var2.webp" alt="Enhanced variation 2" />
+    <figcaption>Variation 2</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var3.png" alt="Enhanced variation 3" style="border: 1px solid #e5e7eb; border-radius: 4px;" />
-    <figcaption>Variation 3: Conceptual Narrative</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var3.webp" alt="Enhanced variation 3" />
+    <figcaption>Variation 3</figcaption>
   </figure>
 </div>
 

@@ -4,7 +4,7 @@ title: "Frame AI"
 date: 2025-10-20
 description: "An AI-powered photography assistant that analyzes photos and suggests enhancements using vision LLMs and nano-banana image generation."
 tech_stack: "FastAPI · Python · Gemini Flash · nano-banana · SQLite"
-thumbnail: "/assets/images/2025-10-20-frame-ai/app-1.png"
+thumbnail: "/assets/images/2025-10-20-frame-ai/app-1.webp"
 links:
   demo: "https://frame-ai.bejayketanguin.com/"
   github: "https://github.com/BKG123/frame-ai"
@@ -35,20 +35,23 @@ Frame AI is an AI-powered photography assistant that bridges the gap between tak
 
 <div class="image-grid">
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/og_image.png" alt="Original photo" style="border: 1px solid #e5e7eb; border-radius: 4px;">
+    <img src="/assets/images/2025-10-20-frame-ai/og_image.webp" alt="Original photo">
     <figcaption>Original</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var1.png" alt="Enhanced variation 1" style="border: 1px solid #e5e7eb; border-radius: 4px;">
-    <figcaption>Variation 1: Technical Perfection</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var1.webp" alt="Enhanced variation 1">
+    <figcaption>Variation 1</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var2.png" alt="Enhanced variation 2" style="border: 1px solid #e5e7eb; border-radius: 4px;">
-    <figcaption>Variation 2: Atmospheric Reinterpretation</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var2.webp" alt="Enhanced variation 2">
+    <figcaption>Variation 2</figcaption>
   </figure>
+
   <figure>
-    <img src="/assets/images/2025-10-20-frame-ai/var3.png" alt="Enhanced variation 3" style="border: 1px solid #e5e7eb; border-radius: 4px;">
-    <figcaption>Variation 3: Conceptual Narrative</figcaption>
+    <img src="/assets/images/2025-10-20-frame-ai/var3.webp" alt="Enhanced variation 3">
+    <figcaption>Variation 3</figcaption>
   </figure>
 </div>
 
