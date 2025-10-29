@@ -55,4 +55,6 @@ Interested in GenAI.
 
 ## LATEST FROM THE BLOG
 
+[ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts](/2025/10/30/reel-craft.html) - A technical deep-dive into ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—that converts any web article into an engaging 30-60 second short-form video.
+
 [Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html) - How I built an AI system that analyzes and enhances photos while teaching me about system design, LLM integration, and product thinking.
