@@ -99,6 +99,7 @@ And most of us are just bad at estimating the weights.
 
 ## More from my blog
 
+- **[ReelCraft: AI-Powered Article to Video Pipeline](/2025/10/30/reel-craft.html)** - How I built a system that transforms articles into engaging short-form videos
 - **[Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html)** - How I built an AI system that analyzes and enhances photos while teaching me
-- **[Your Feelings Lie to You (Sometimes)](/2025/04/15/your-feelings-lie-to-you-sometimes.html)** - My exploration of how emotions and logic shape our decision-making process
 - **[Coding in the era of LLMs](/2025/09/21/coding-in-the-era-of-llms.html)** - My thoughts on AI-assisted coding and the importance of learning fundamentals
+- **[Your Feelings Lie to You (Sometimes)](/2025/04/15/your-feelings-lie-to-you-sometimes.html)** - My exploration of how emotions and logic shape our decision-making process
