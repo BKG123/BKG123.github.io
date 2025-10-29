@@ -1,8 +1,12 @@
------
-
-layout: post title: "ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts" date: 2025-10-30 description: "A technical deep-dive into ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—that converts any web article into an engaging 30-60 second short-form video. From the initial PoC to production-ready reliability." author: "Bejay Ketan Guin" tags: [AI, VideoGen, LLM, Gemini, Python, FastAPI, FFmpeg, Automation, Production Engineering] acknowledgment: "Built with the visionary zeal of Paras Chopra and the technical brilliance of Aakash Bhat."
-
------
+---
+layout: post
+title: "ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts"
+date: 2025-10-30
+description: "A technical deep-dive into ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—that converts any web article into an engaging 30-60 second short-form video. From the initial PoC to production-ready reliability."
+author: "Bejay Ketan Guin"
+tags: [AI, VideoGen, Tech]
+acknowledgment: "Blog written with the help of <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
+---
 
 
 ## Introduction: The Short-Form Addiction Dilemma
@@ -216,7 +220,7 @@ If you're working on similar AI-powered creative tools, I hope this deep-dive gi
 
 -----
 
-**GitHub**: [repository-url-here]
+**GitHub**: [repo](https://github.com/BKG123/reelcraft)
 
 **API Docs**: [http://localhost:8000/docs](https://www.google.com/search?q=http://localhost:8000/docs) (when running locally)
 
