@@ -44,7 +44,9 @@ ReelCraft is a fully automated video generation pipeline. You paste an article U
 
 The entire process is a streamlined, five-step pipeline:
 
-$$\text{Article URL} \xrightarrow{\text{Content Extraction}} \text{Script Generation} \xrightarrow{\text{Audio Generation}} \text{Asset Download} \xrightarrow{\text{Video Editing}} \text{Final Video}$$
+```
+Article URL → Content Extraction → Script Generation → Audio + Asset Generation → Video Editing → Final Video
+```
 
 -----
 
@@ -220,9 +222,18 @@ If you're working on similar AI-powered creative tools, I hope this deep-dive gi
 
 -----
 
-**GitHub**: [repo](https://github.com/BKG123/reelcraft)
+**GitHub**: [https://github.com/BKG123/reelcraft](https://github.com/BKG123/reelcraft){:target="_blank" rel="noopener noreferrer"}
 
-**API Docs**: [http://localhost:8000/docs](https://www.google.com/search?q=http://localhost:8000/docs) (when running locally)
+**API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs) (when running locally)
 
 **Author**: Bejay Ketan Guin
 **With special thanks to**: [Paras Chopra](https://x.com/paraschopra) for the vision, and [Aakash Bhat](https://www.aakashb.xyz/) for the original collaboration.
+
+---
+
+## More from my blog
+
+- **[Frame AI: Building an AI-Powered Photography Assistant](/2025/10/20/frame-ai.html)** - How I built an AI system that analyzes and enhances photos while teaching me
+- **[Everything in Life is Linear Regression](/2025/10/16/life-is-linear-regression.html)** - Why life's complexities are best understood as weighted combinations of multiple factors
+- **[Coding in the era of LLMs](/2025/09/21/coding-in-the-era-of-llms.html)** - My thoughts on AI-assisted coding and the importance of learning fundamentals
+- **[Your Feelings Lie to You (Sometimes)](/2025/04/15/your-feelings-lie-to-you-sometimes.html)** - My exploration of how emotions and logic shape our decision-making process
