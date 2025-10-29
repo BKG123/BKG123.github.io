@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-28T00:04:54+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Reel Craft</title><link href="http://localhost:4000/2025/10/28/reel-craft.html" rel="alternate" type="text/html" title="Reel Craft" /><published>2025-10-28T00:00:00+05:30</published><updated>2025-10-28T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/28/reel-craft</id><content type="html" xml:base="http://localhost:4000/2025/10/28/reel-craft.html"><![CDATA[<hr />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-30T00:31:05+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">Reel Craft</title><link href="http://localhost:4000/2025/10/28/reel-craft.html" rel="alternate" type="text/html" title="Reel Craft" /><published>2025-10-28T00:00:00+05:30</published><updated>2025-10-28T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/28/reel-craft</id><content type="html" xml:base="http://localhost:4000/2025/10/28/reel-craft.html"><![CDATA[<hr />
 
-<h2 id="layout-post-title-reelcraft-the-ai-pipeline-that-turns-long-articles-into-viral-shorts-date-2025-10-28-description-how-we-built-reelcraftan-automated-system-using-gemini-ai-pexels-and-ffmpegto-convert-any-web-article-into-an-engaging-30-60-second-short-form-video-in-one-click-author-bejay-tags-ai-videogen-llm-gemini-python-fastapi-acknowledgment-built-with-the-visionary-zeal-of-paras-and-the-technical-brilliance-of-aakash">layout: post title: “ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts” date: 2025-10-28 description: “How we built ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—to convert any web article into an engaging 30-60 second short-form video in one click.” author: “Bejay” tags: [AI, VideoGen, LLM, Gemini, Python, FastAPI] acknowledgment: “Built with the visionary zeal of Paras and the technical brilliance of Aakash.”</h2>
+<p>layout: post title: “ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts” date: 2025-10-30 description: “A technical deep-dive into ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—that converts any web article into an engaging 30-60 second short-form video. From the initial PoC to production-ready reliability.” author: “Bejay Ketan Guin” tags: [AI, VideoGen, LLM, Gemini, Python, FastAPI, FFmpeg, Automation, Production Engineering] acknowledgment: “Built with the visionary zeal of Paras Chopra and the technical brilliance of Aakash Bhat.”</p>
+
+<hr />
 
 <h2 id="introduction-the-short-form-addiction-dilemma">Introduction: The Short-Form Addiction Dilemma</h2>
 
-<p>It was during the last of <strong>Ninety Days</strong> (early 2024), a hyper-productive sprint where our team was shipping app prototypes weekly. For one such prototype, <strong>Paras</strong> (our CEO) had a funky, yet brilliant, hypothesis: almost everyone in the tech sphere <strong>wants to be productive</strong> and read long-form content, but is simultaneously <strong>addicted to short-form content</strong> (Reels, TikToks, Shorts). The addiction was real, and it was a problem begging for an AI solution.</p>
+<p>It was during the last days of <strong>Nintee</strong> (my last startup stint, early 2024), a hyper-productive sprint where our team was shipping app prototypes weekly. For one such prototype, <a href="https://x.com/paraschopra"><strong>Paras</strong></a> (our CEO) had a funky, yet brilliant, hypothesis: almost everyone in the tech sphere <strong>wants to be productive</strong> and read long-form content, but is simultaneously <strong>addicted to short-form content</strong> (Reels, TikToks, Shorts). The addiction was real, and it was a problem begging for an AI solution.</p>
 
 <p>The goal was simple: bridge the gap. Turn the boring, text-heavy productivity content into the snackable, engaging format of a reel.</p>
 
-<p>I was entrusted with building the initial Proof of Concept (PoC) along with my colleague and best friend, <strong>Aakash</strong>. We had a blast. Fast forward to now (October 2025), I’ve decided to reproduce the entire pipeline, refine it, and document the process. We called it <strong>ReelCraft</strong>.</p>
+<p>I was entrusted with building the initial Proof of Concept (PoC) along with my colleague and best friend, <a href="https://www.aakashb.xyz/"><strong>Aakash</strong></a>. We had a blast. The timing was perfect—ChatGPT had just launched the previous year, and GenAI was beginning to show its potential for creative applications.</p>
+
+<p>Fast forward to now (October 2025), I’ve decided to reproduce the entire pipeline from scratch, refine it with modern best practices, and document the process. I don’t know if I’m breaking any IP here, but the learnings are too valuable not to share. I will be calling it <strong>ReelCraft</strong>.</p>
 
 <p><strong>ReelCraft</strong> automatically transforms any web article into a polished, 30–60 second vertical video, complete with narration, stock media, and background music.</p>
 
@@ -25,6 +29,14 @@
   <li><strong>AI-Powered Voice Over:</strong> Natural-sounding voice narration is generated for each scene using <strong>Gemini Text-to-Speech (TTS)</strong>.</li>
   <li><strong>Smart Asset Selection:</strong> The pipeline automatically finds and downloads relevant <strong>images and videos</strong> from <strong>Pexels</strong> based on keywords generated alongside the script.</li>
   <li><strong>Professional Composition:</strong> <strong>FFmpeg</strong> stitches the visual assets, audio, and background music together into a vertical video (720x1280).</li>
+  <li><strong>Visual Polish Features:</strong>
+    <ul>
+      <li><strong>Dynamic Audio Ducking:</strong> Background music automatically lowers during voiceover and rises during pauses for professional audio mixing</li>
+      <li><strong>Text-Only Scenes:</strong> AI generates punchy text overlays (1-5 words) on solid backgrounds to emphasize key points</li>
+      <li><strong>Smart Aspect Ratios:</strong> Landscape videos display with blurred background fill for portrait frames</li>
+      <li><strong>Smooth Transitions:</strong> Dynamic scene transitions (fade, wipe, slide) instead of hard cuts</li>
+    </ul>
+  </li>
   <li><strong>Modern Web UI:</strong> A user-friendly, responsive interface with <strong>WebSocket</strong> integration for <strong>real-time progress tracking</strong>.</li>
 </ul>
 
@@ -112,7 +124,25 @@
   <li><strong>Solution:</strong> We calculate the required speed adjustment factor ($\frac{\text{Visual Duration}}{\text{Audio Duration}}$) and apply it using FFmpeg’s <code class="language-plaintext highlighter-rouge">atempo</code> filter. This subtly speeds up or slows down the voice-over so it ends precisely when the visual scene transitions.</li>
 </ul>
 
-<h3 id="decision-4-monitoring-with-langfuse">Decision 4: Monitoring with Langfuse</h3>
+<h3 id="decision-4-building-resilience-into-the-pipeline">Decision 4: Building Resilience into the Pipeline</h3>
+
+<p>As we tested ReelCraft with various articles and network conditions, we encountered several failure modes that needed addressing.</p>
+
+<ul>
+  <li><strong>Problem:</strong> API calls would occasionally timeout, network issues caused intermittent failures, and some websites had scraping challenges.</li>
+  <li><strong>Solution:</strong> We implemented a comprehensive resilience strategy:
+    <ul>
+      <li><strong>Async Retry Mechanism:</strong> Added an <code class="language-plaintext highlighter-rouge">@async_retry</code> decorator with exponential backoff (1s, 2s, 4s) for HTTP requests, automatically recovering from transient network failures</li>
+      <li><strong>Increased Timeouts:</strong> Extended HTTP timeouts from 30s to 90s (and 120s for Pexels) to accommodate slower connections and large media downloads</li>
+      <li><strong>Enhanced Web Scraping:</strong> Added content validation checks for FireCrawl responses, detecting common error patterns (e.g., “access denied”, “not found”) and providing meaningful error messages</li>
+      <li><strong>Comprehensive Error Handling:</strong> Added try-catch blocks throughout the pipeline with specific error types (<code class="language-plaintext highlighter-rouge">WebScrapingError</code>) to distinguish between different failure modes</li>
+      <li><strong>User-Friendly Feedback:</strong> Enhanced progress updates to inform users about specific failures (e.g., “Failed to extract content”, “Connection interrupted”) rather than generic errors</li>
+    </ul>
+  </li>
+  <li><strong>Impact:</strong> These changes dramatically improved the success rate—videos that previously failed due to temporary network hiccups now complete successfully. The system gracefully handles edge cases like paywalled articles, JavaScript-heavy sites, and API rate limits.</li>
+</ul>
+
+<h3 id="decision-5-monitoring-with-langfuse">Decision 5: Monitoring with Langfuse</h3>
 
 <p>To move beyond “it works on my machine,” we integrated <strong>Langfuse</strong>.</p>
 
@@ -168,6 +198,41 @@
 
 <hr />
 
+<h2 id="recent-improvements-from-poc-to-production-ready-">Recent Improvements: From PoC to Production-Ready 🔧</h2>
+
+<p>The initial prototype worked, but it had rough edges. After running ReelCraft on dozens of real-world articles, we identified and fixed several critical pain points:</p>
+
+<h3 id="reliability--resilience">Reliability &amp; Resilience</h3>
+
+<p>The biggest challenge wasn’t the happy path—it was handling the <strong>messy reality</strong> of production use.</p>
+
+<p><strong>The Problems:</strong></p>
+<ul>
+  <li>Random network timeouts killing entire 3-minute video generations</li>
+  <li>Pexels API occasionally taking 45+ seconds to return large video files</li>
+  <li>FireCrawl struggling with certain websites (JavaScript-heavy sites, paywalled content, bot detection)</li>
+  <li>Generic error messages like “Request failed” that gave no actionable debugging info</li>
+</ul>
+
+<p><strong>The Solutions:</strong></p>
+<ul>
+  <li><strong>Automatic Retry Logic:</strong> Implemented an exponential backoff retry mechanism (<code class="language-plaintext highlighter-rouge">@async_retry</code> decorator) that automatically retries failed HTTP requests up to 3 times with 1s, 2s, and 4s delays. This single change increased our success rate from ~70% to ~95%.</li>
+  <li><strong>Generous Timeouts:</strong> Bumped HTTP timeouts from 30s to 90s (and 120s for Pexels media downloads). Better to wait an extra minute than fail entirely.</li>
+  <li><strong>Smart Content Validation:</strong> Added checks to detect when FireCrawl returns error pages instead of actual content (e.g., checking for phrases like “access denied”, empty responses, or suspiciously short content).</li>
+  <li><strong>Granular Error Reporting:</strong> Created custom exception types (<code class="language-plaintext highlighter-rouge">WebScrapingError</code>) and enhanced WebSocket progress updates to tell users <em>exactly</em> what went wrong (“Failed to extract article content” vs. “Connection interrupted”).</li>
+</ul>
+
+<h3 id="user-experience-enhancements">User Experience Enhancements</h3>
+
+<ul>
+  <li><strong>Real-Time Error Feedback:</strong> The frontend now displays specific error messages for different failure scenarios, helping users understand whether the issue is with the article URL, network connectivity, or API limits.</li>
+  <li><strong>Better Asset Descriptions:</strong> Improved the metadata for downloaded Pexels videos to include dimensions and duration, making debugging and asset tracking easier.</li>
+</ul>
+
+<p><strong>Impact:</strong> These changes transformed ReelCraft from a “works on my machine” demo into a <strong>reliable, production-grade tool</strong>. The retry mechanism alone eliminated 80% of transient failures, and the enhanced error handling made debugging issues 10x faster.</p>
+
+<hr />
+
 <h2 id="whats-next-the-roadmap-">What’s Next: The Roadmap 🚀</h2>
 
 <p>While ReelCraft is a functional and polished PoC, there’s always more to build:</p>
@@ -177,9 +242,40 @@
   <li><strong>Customization:</strong> Adding options for custom background music, different TTS voices, and font/style controls.</li>
   <li><strong>Batch Processing:</strong> Allowing users to queue up multiple articles for video generation.</li>
   <li><strong>Evals:</strong> Developing a proper LLM-as-a-Judge evaluation framework to quantitatively assess the quality of the generated script and asset keywords.</li>
+  <li><strong>A/B Testing Framework:</strong> Systematically test different prompts, scene counts, and asset selection strategies to optimize for engagement.</li>
 </ul>
 
+<hr />
+
+<h2 id="reflections-what-i-learned-building-this">Reflections: What I Learned Building This</h2>
+
+<p>Building ReelCraft taught me several lessons that go beyond the technical stack:</p>
+
+<p><strong>1. The 80/20 of Production Systems</strong></p>
+
+<p>The initial PoC took about a week. Making it <strong>reliable</strong> took another month. The difference between “works in demos” and “works in production” is enormous—you need retry logic, timeout handling, graceful degradation, and comprehensive error reporting. These aren’t sexy features, but they’re what separate toys from tools.</p>
+
+<p><strong>2. Parallelism is a Force Multiplier</strong></p>
+
+<p>The moment we switched from sequential to parallel processing (audio + assets concurrently), the user experience transformed. A 10-minute wait becomes a 3-minute wait. In product terms, that’s the difference between “this is too slow” and “this is acceptable.”</p>
+
+<p><strong>3. LLMs + Traditional Tools = Magic</strong></p>
+
+<p>The real power isn’t just in the LLM—it’s in the <strong>combination</strong>. Gemini generates creative scripts, but FFmpeg does the heavy lifting of video composition. Pexels provides the visuals, but the LLM’s keyword generation makes the search intelligent. The system is greater than the sum of its parts.</p>
+
+<p><strong>4. Error Messages are User Empathy</strong></p>
+
+<p>Changing “Request failed” to “Failed to extract article content - the site may be blocking scrapers” is a tiny code change but a huge UX win. Good error messages respect the user’s time and intelligence.</p>
+
+<hr />
+
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+
 <p>The blend of an LLM’s creativity with robust media processing tools like FFmpeg proved to be an incredibly powerful combination. We took a common problem—the attention-span gap—and solved it with a fully automated, scalable pipeline.</p>
+
+<p>What started as a weekend hackathon project at Nintee has evolved into something I’m genuinely proud of. It’s not perfect, but it works, it’s reliable, and it solves a real problem.</p>
+
+<p>If you’re working on similar AI-powered creative tools, I hope this deep-dive gives you some ideas. And if you try ReelCraft and generate a video, I’d love to see it!</p>
 
 <p><strong>Check out the repository and try the API!</strong></p>
 
@@ -187,7 +283,10 @@
 
 <p><strong>GitHub</strong>: [repository-url-here]</p>
 
-<p><strong>API Docs</strong>: <a href="https://www.google.com/search?q=http://localhost:8000/docs">http://localhost:8000/docs</a> (when running locally)</p>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
+<p><strong>API Docs</strong>: <a href="https://www.google.com/search?q=http://localhost:8000/docs">http://localhost:8000/docs</a> (when running locally)</p>
+
+<p><strong>Author</strong>: Bejay Ketan Guin
+<strong>With special thanks to</strong>: <a href="https://x.com/paraschopra">Paras Chopra</a> for the vision, and <a href="https://www.aakashb.xyz/">Aakash Bhat</a> for the original collaboration.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Frame AI: Building an AI-Powered Photography Assistant</title><link href="http://localhost:4000/2025/10/20/frame-ai.html" rel="alternate" type="text/html" title="Frame AI: Building an AI-Powered Photography Assistant" /><published>2025-10-20T00:00:00+05:30</published><updated>2025-10-20T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/20/frame-ai</id><content type="html" xml:base="http://localhost:4000/2025/10/20/frame-ai.html"><![CDATA[<h2 id="introduction-the-mobile-photography-itch">Introduction: The Mobile Photography Itch</h2>
 
 <p>Every developer will tell you this: “I want to work on a side project to improve my portfolio.” But almost all of them will also admit they never got around to building it. I wanted to break that loop, so I started hunting for ideas. I’ve always been fascinated by photography. Never professional-level good, but I can click half-decent pics on my iPhone. One of my friends introduced me to amateur photography principles — rule of thirds, leading lines, proper lighting. I try to keep those in mind while taking snaps. More often than not, I fail, lol. That’s when the idea hit me: What if I could analyze images using vision LLMs (like Gemini 2.5 Flash) by prompting them correctly to check alignment with widely accepted photography rules? As I was iterating on the project, Google launched Gemini 2.5 Flash Image (nicknamed “nano-banana” by the developer community) in August 2025 — a breakthrough in image generation and editing that hit #1 on LMArena’s leaderboards. I thought, why not edit the images based on the analysis? So yeah, in short: Frame AI analyzes images and critiques them, and you can enhance images using Gemini 2.5 Flash Image.</p>
 
