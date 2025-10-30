@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-30T00:46:36+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts</title><link href="http://localhost:4000/2025/10/30/reel-craft.html" rel="alternate" type="text/html" title="ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts" /><published>2025-10-30T00:00:00+05:30</published><updated>2025-10-30T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/30/reel-craft</id><content type="html" xml:base="http://localhost:4000/2025/10/30/reel-craft.html"><![CDATA[<h2 id="introduction-the-short-form-addiction-dilemma">Introduction: The Short-Form Addiction Dilemma</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-30T21:46:46+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Bejay’s Website</title><subtitle>Welcome to my little corner of the internet. Full-time engineer passionate about GenAI, building magical experiences with clarity and logic.</subtitle><entry><title type="html">ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts</title><link href="http://localhost:4000/2025/10/30/reel-craft.html" rel="alternate" type="text/html" title="ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts" /><published>2025-10-30T00:00:00+05:30</published><updated>2025-10-30T00:00:00+05:30</updated><id>http://localhost:4000/2025/10/30/reel-craft</id><content type="html" xml:base="http://localhost:4000/2025/10/30/reel-craft.html"><![CDATA[<h2 id="introduction-the-short-form-addiction-dilemma">Introduction: The Short-Form Addiction Dilemma</h2>
 
 <p>It was during the last days of <strong>Nintee</strong> (my last startup stint, early 2024), a hyper-productive sprint where our team was shipping app prototypes weekly. For one such prototype, <a href="https://x.com/paraschopra"><strong>Paras</strong></a> (our CEO) had a funky, yet brilliant, hypothesis: almost everyone in the tech sphere <strong>wants to be productive</strong> and read long-form content, but is simultaneously <strong>addicted to short-form content</strong> (Reels, TikToks, Shorts). The addiction was real, and it was a problem begging for an AI solution.</p>
 
@@ -38,7 +38,17 @@
 
 <p>The entire process is a streamlined, five-step pipeline:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Article URL → Content Extraction → Script Generation → Audio + Asset Generation → Video Editing → Final Video
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Article URL
+    ↓
+Content Extraction
+    ↓
+Script Generation
+    ↓
+Audio + Asset Generation
+    ↓
+Video Editing
+    ↓
+Final Video
 </code></pre></div></div>
 
 <hr />
@@ -281,7 +291,7 @@
 <p><strong>API Docs</strong>: <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> (when running locally)</p>
 
 <p><strong>Author</strong>: Bejay Ketan Guin
-<strong>With special thanks to</strong>: <a href="https://x.com/paraschopra">Paras Chopra</a> for the vision, and <a href="https://www.aakashb.xyz/">Aakash Bhat</a> for the original collaboration.</p>
+<strong>With special thanks to</strong>: <a href="https://x.com/paraschopra">Paras Chopra</a> for the vision, and <a href="https://www.aakashb.xyz/">Aakash Bakhle</a> for the original collaboration.</p>
 
 <hr />
 
