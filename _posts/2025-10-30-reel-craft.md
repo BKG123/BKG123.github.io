@@ -21,7 +21,7 @@ Fast forward to now (October 2025), I've decided to reproduce the entire pipelin
 **ReelCraft** automatically transforms any web article into a polished, 30–60 second vertical video, complete with narration, stock media, and background music.
 
 
-Main Components:
+Evolution:
 - Extract as much from the LLM. Generation of script using the article context. Extract as much details as possible.
 So we let the llm decide how many scenes to be there. Each screen object would have 2-3 fields.
 
@@ -37,7 +37,10 @@ So we let the llm decide how many scenes to be there. Each screen object would h
     "asset_type": "video"
 }
 ```
-- Now at first we were also letting the llm decide
+- Now at first we were also letting the llm decide the duration to. But the problem was the sync. The time taken to speak a sentence varies from person to person and TTS to TTS - lol.
+
+- In the next go, we decided to let the TTS take its own time to speak the content of each script.
+- So the sync problem was solved.
 Here's the [link to the full prompt](https://github.com/BKG123/reelcraft/blob/main/config/prompts.py).
 
 prompt_image.png
