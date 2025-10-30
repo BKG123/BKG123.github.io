@@ -45,7 +45,17 @@ ReelCraft is a fully automated video generation pipeline. You paste an article U
 The entire process is a streamlined, five-step pipeline:
 
 ```
-Article URL → Content Extraction → Script Generation → Audio + Asset Generation → Video Editing → Final Video
+Article URL
+    ↓
+Content Extraction
+    ↓
+Script Generation
+    ↓
+Audio + Asset Generation
+    ↓
+Video Editing
+    ↓
+Final Video
 ```
 
 -----
@@ -227,7 +237,7 @@ If you're working on similar AI-powered creative tools, I hope this deep-dive gi
 **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs) (when running locally)
 
 **Author**: Bejay Ketan Guin
-**With special thanks to**: [Paras Chopra](https://x.com/paraschopra) for the vision, and [Aakash Bhat](https://www.aakashb.xyz/) for the original collaboration.
+**With special thanks to**: [Paras Chopra](https://x.com/paraschopra) for the vision, and [Aakash Bakhle](https://www.aakashb.xyz/) for the original collaboration.
 
 ---
 
