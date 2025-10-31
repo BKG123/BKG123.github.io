@@ -31,7 +31,7 @@ title: "Bejay Ketan Guin"
   <div class="intro-container" markdown="1">
 # BEJAY KETAN GUIN
 
-**Software Engineer 2 (Gen AI) @ Wingify**
+**Senior Software Engineer (Gen AI & Backend) @ Wingify**
 📍 Remote
 
 Human Software Engineer.
