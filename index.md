@@ -44,7 +44,7 @@ Interested in GenAI.
 
 ## PROFESSIONAL JOURNEY
 
-- Software Engineer 2 @ Wingify - Ongoing
+- Senior Software Engineer @ Wingify - Ongoing
 - Founding Engineer @ Nintee - 1.5 years
 - Research Scholar @ IIT Kharagpur - 1 year
 
