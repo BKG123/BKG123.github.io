@@ -4,7 +4,7 @@ title: "ReelCraft"
 date: 2025-10-30
 description: "An automated video generation pipeline that converts web articles into engaging 30-60 second vertical videos using Gemini AI, Pexels, and FFmpeg."
 tech_stack: "FastAPI · Python · Gemini AI · FFmpeg · Pexels API · FireCrawl"
-thumbnail: "/assets/images/2025-10-30-reel-craft/thumbnail.webp"
+thumbnail: "/assets/images/2025-10-30-reel-craft/reelcraft-app.png"
 links:
   github: "https://github.com/BKG123/reelcraft"
 ---
