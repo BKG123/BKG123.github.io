@@ -2,7 +2,7 @@
 layout: post
 title: "ReelCraft: The AI Pipeline That Turns Long Articles into Viral Shorts"
 date: 2025-10-30
-description: "A technical deep-dive into ReelCraft—an automated system using Gemini AI, Pexels, and FFmpeg—that converts any web article into an engaging 30-60 second short-form video."
+description: "A technical deep-dive into ReelCraft - an automated system using Gemini AI, Pexels, and FFmpeg, that converts any web article into an engaging 30-60 second short-form video."
 author: "Bejay Ketan Guin"
 tags: [AI, VideoGen, Tech]
 acknowledgment: "Built with curiosity, debugged with patience, polished with <span style='color: #3182ce; font-weight: 500;'>Claude</span>."
@@ -16,7 +16,7 @@ The goal was simple: bridge the gap. Turn the boring, text-heavy productivity co
 
 I was entrusted with building the initial Proof of Concept (PoC) along with my colleague and friend, [Aakash](https://www.aakashb.xyz/). We had a blast. The timing was perfect - ChatGPT had just launched the previous year, and GenAI was beginning to show its potential for creative applications.
 
-Fast forward to now (October 2025), I've decided to rebuild the entire pipeline from scratch based on that original idea and my recollections of what we built. The prototype we shipped back then proved the concept worked, but this version, what you'll find in the repo (linked below) is a complete reimplementation with modern best practices and lessons learned. I'm calling it **ReelCraft**.
+Fast forward to now (October 2025), I've decided to rebuild the entire pipeline from scratch based on that original idea and my recollections of what we built. The prototype we shipped back then proved the concept worked, but this version, what you'll find in the repo (linked below) is a complete reimplementation with newly available tools. I'm calling it **ReelCraft**.
 
 ## What is ReelCraft?
 
