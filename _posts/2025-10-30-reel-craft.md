@@ -76,10 +76,10 @@ So we let the llm decide how many scenes to be there. Each screen object would h
 ```json
 {
     "scene_number": 7,
-    "script": "Younger minds have the most room to change their thinking and experience 'surprise.'",
+    "script": "Younger minds have more room to grow.",
     "asset_keywords": [
-        "brain growth animation",
-        "mind blown reaction",
+        "brain growth",
+        "mind blown",
         "lightbulb moment"
     ],
     "asset_type": "video"
