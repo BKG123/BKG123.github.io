@@ -38,7 +38,7 @@ title: "Bejay Ketan Guin"
 
 Interested in GenAI.
 
-[My Resume](https://drive.google.com/file/d/1hDcMEqoYkcik4LDD_v_9ERKIX-38vBWe/view?usp=drive_link)
+[My Resume](https://drive.google.com/file/d/1myOKT9QD_HFTbRBFBHGA8Mg-CD8P1aI1/view?usp=sharing)
   </div>
 </div>
 
