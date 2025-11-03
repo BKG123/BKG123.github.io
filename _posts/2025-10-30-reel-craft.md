@@ -27,6 +27,8 @@ ReelCraft is a fully automated video generation pipeline. You paste an article U
   <figcaption>The ReelCraft web interface: simple URL input to generate engaging short-form videos</figcaption>
 </figure>
 
+**Want to see it in action?** Check out a [sample reel generated from Paul Graham's essay](/projects/reel-craft.html#sample-output) on the project page.
+
 ### The Flow: URL to Reel
 
 Five-step pipeline:
