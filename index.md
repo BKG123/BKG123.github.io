@@ -34,7 +34,7 @@ title: "Bejay Ketan Guin"
 **Senior Software Engineer (Gen AI & Backend) @ Wingify**
 📍 Remote
 
-Human Software Engineer.
+1.5X Human Software Engineer.
 
 Interested in GenAI.
 
