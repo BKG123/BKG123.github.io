@@ -147,6 +147,7 @@ This project is now in a usable state, but here's what I would like to do next:
 
 - **Add Subtitles**: Info-related reels have those and it's obviously the most logical next step.
 - **Better Context**: The context of the assets can be better. Have to find a optimised way of doing this.
+- **Better Audio**: There are some inconsistencies in the tonalities of one scene to another because each section is converted using TTS independently. Need to fix this.
 - **Evals**: Any LLM-based app should have proper evals - can't just depend on eyeballing things.
 
 **Tech Stack:**
