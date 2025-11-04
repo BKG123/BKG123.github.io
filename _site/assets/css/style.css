@@ -274,3 +274,8 @@ input:invalid, textarea:invalid, select:invalid { border-color: #e53e3e; }
 .lightbox-image { max-width: 90vw; max-height: 85vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 8px; }
 
 .lightbox-close { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; line-height: 1; color: #fff; background: transparent; border: none; cursor: pointer; }
+
+.feedback-link-container { text-align: center; margin: 40px 0 20px 0; }
+
+.feedback-link { color: var(--text-muted); font-size: 0.875rem; text-decoration: none; border-bottom: 1px solid var(--border-color); padding-bottom: 2px; transition: color 0.2s ease, border-color 0.2s ease; }
+.feedback-link:hover { color: var(--text-secondary); border-bottom-color: var(--text-secondary); text-decoration: none; }
