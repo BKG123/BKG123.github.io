@@ -66,6 +66,44 @@ $breakpoint-xl: 1200px;
     padding: $spacer;
     font-size: $font-size-base;
   }
+
+  // New responsive improvements
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+
+    .btn-primary, .btn-secondary {
+      width: 100% !important;
+      justify-content: center;
+    }
+  }
+
+  .hero-social {
+    justify-content: center;
+  }
+
+  .blog-card-modern,
+  .education-card,
+  .project-card,
+  .timeline-content {
+    padding: 1.25rem !important;
+  }
+
+  .section-header {
+    text-align: center;
+
+    h2 {
+      font-size: 2rem !important;
+    }
+  }
 }
 
 @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
@@ -76,6 +114,20 @@ $breakpoint-xl: 1200px;
   .social-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  // Tablet improvements
+  .hero-section {
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
   }
 }
 
@@ -107,10 +159,15 @@ $breakpoint-xl: 1200px;
     margin-bottom: 1rem;
   }
 
-  a::after {
+  .main-content a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
+  }
+
+  .footer-social a::after,
+  .footer-links a::after {
+    content: none !important;
   }
 }
 

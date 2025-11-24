@@ -4,8 +4,10 @@ title: "Projects"
 ---
 
 <div class="projects-section">
-  <h1 class="section-title">Projects</h1>
-  <p class="section-description">A collection of things I've built while learning and experimenting</p>
+  <div class="page-hero">
+    <h1>Projects</h1>
+    <p class="page-subtitle">A collection of things I've built while learning and experimenting with AI, backend systems, and innovative solutions.</p>
+  </div>
 
   <div class="projects-grid">
     {% assign sorted_projects = site.projects | sort: 'date' | reverse %}

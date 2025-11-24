@@ -41,10 +41,19 @@
 
   // Update the theme toggle icon
   function updateThemeIcon(theme) {
+    // For old format (emoji icon)
     const themeIcon = document.querySelector('.theme-icon');
     if (themeIcon) {
       themeIcon.textContent = theme === LIGHT_THEME ? '🌙' : '☀️';
       themeIcon.setAttribute('aria-label',
+        `Switch to ${theme === LIGHT_THEME ? 'dark' : 'light'} theme`
+      );
+    }
+
+    // For new format (button with SVG icons)
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute('aria-label',
         `Switch to ${theme === LIGHT_THEME ? 'dark' : 'light'} theme`
       );
     }
@@ -64,13 +73,27 @@
     const savedTheme = getSavedTheme();
     applyTheme(savedTheme);
 
-    // Add click listener to theme toggle
-    const themeToggle = document.querySelector('.theme-icon');
+    // Add click listener to theme toggle (old format)
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+      themeIcon.addEventListener('click', toggleTheme);
+      themeIcon.style.cursor = 'pointer';
+      themeIcon.setAttribute('role', 'button');
+      themeIcon.setAttribute('tabindex', '0');
+
+      // Add keyboard support
+      themeIcon.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleTheme();
+        }
+      });
+    }
+
+    // Add click listener to theme toggle (new format)
+    const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
       themeToggle.addEventListener('click', toggleTheme);
-      themeToggle.style.cursor = 'pointer';
-      themeToggle.setAttribute('role', 'button');
-      themeToggle.setAttribute('tabindex', '0');
 
       // Add keyboard support
       themeToggle.addEventListener('keydown', function(e) {
