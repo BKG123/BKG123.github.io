@@ -57,8 +57,8 @@ I am not saying one should suppress emotions, it's about not letting temporary f
 I'm a 28-year-old software engineer.
 Here's a quick snapshot of my journey:
 
-- Graduated B.Tech in ECE — 2019
-- Completed M.Tech during the COVID years — 2021
+- Graduated B.Tech in ECE - 2019
+- Completed M.Tech during the COVID years - 2021
 - Started a PhD, dropped out after a year
 - Prepared for interviews, hustled hard
 - Finally joined a startup in October 2022

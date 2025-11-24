@@ -137,7 +137,7 @@ Building this pipeline wasn't a straight line. Here are the key pivots and impro
 
 I hadn't handled errors in the markdown extraction step properly. One day, I fed it an article about vector databases and indices. The system churned away, generated the reel, and I sat down to review the quality.
 
-A few minutes into the video, I noticed something odd. The narration wasn't about databases at all—it was reading out **error messages**. "Failed to parse markdown. Unexpected token at line 47." The whole reel was about *errors*. lol.
+A few minutes into the video, I noticed something odd. The narration wasn't about databases at all-it was reading out **error messages**. "Failed to parse markdown. Unexpected token at line 47." The whole reel was about *errors*. lol.
 
 Turns out, when FireCrawl failed to extract clean markdown, it returned an error object, which the LLM dutifully turned into a "script" about… errors. I obviously fixed the error handling after that.
 

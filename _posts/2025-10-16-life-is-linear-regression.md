@@ -25,19 +25,19 @@ Now, if we extrapolate this to multiple independent variables:
 
 In most use cases of linear regression, this is the case. An outcome or output is dependent on multiple factors.
 
-Suppose you're modeling the house price of a city using linear regression. You'll find that historically, the price of a house depends on multiple factors — area, number of rooms, sq footage, parking (available or not), and so on. The Linear Regression algorithm tries to find those coefficients — w₁, w₂, ... wₙ — and we get a model (or equation) on which, if we feed in new values of x₁...xₙ, we can "predict" or "estimate" the cost of the house in question.
+Suppose you're modeling the house price of a city using linear regression. You'll find that historically, the price of a house depends on multiple factors - area, number of rooms, sq footage, parking (available or not), and so on. The Linear Regression algorithm tries to find those coefficients - w₁, w₂, ... wₙ - and we get a model (or equation) on which, if we feed in new values of x₁...xₙ, we can "predict" or "estimate" the cost of the house in question.
 
-Now, the idea of this blog is not to deep dive into LR. It's because I seem to find a parallel between everything in life and this mathematical concept — not the linear part, but the **combination part** where everything is a combination of multiple things with different scaling factors associated with each of them.
+Now, the idea of this blog is not to deep dive into LR. It's because I seem to find a parallel between everything in life and this mathematical concept - not the linear part, but the **combination part** where everything is a combination of multiple things with different scaling factors associated with each of them.
 
 ---
 
 ### For example:
 
-Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently "making you late" by asking you to eat breakfast before leaving. But this is **black-and-white thinking** — sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.
+Suppose you missed a train on a certain day. You become extremely angry and start blaming your mom for apparently "making you late" by asking you to eat breakfast before leaving. But this is **black-and-white thinking** - sure, it might have played a role. But there are other factors here as well to consider. Like the fact that you slept late last night despite knowing you have a train to catch the next day. Also, the traffic at that time was more than usual.
 
 <figure>
   <img src="/assets/images/2025-10-16-life-is-linear-regression/image2.webp" alt="Multiple factors contributing to missing a train">
-  <figcaption>Missing the train isn't about one factor — it's a weighted combination of breakfast delay, waking up late, traffic, and more</figcaption>
+  <figcaption>Missing the train isn't about one factor - it's a weighted combination of breakfast delay, waking up late, traffic, and more</figcaption>
 </figure>
 
 If I were to put it in the equation:
@@ -64,7 +64,7 @@ The more experiences I have in life, the more I resonate with this.
 
 Now, I know real linear regression has assumptions about linearity and independence that life often violates. But as a mental model for thinking about multiple factors contributing to outcomes, it works surprisingly well.
 
-This also helps me approach differences in opinions in a calmer and composed manner. Let's say India wins a cricket match — some say it was because of Virat's ton. Some say it's because of Bumrah's fifer. Or some say it was because of Rohit's quickfire 25 off 10 balls.
+This also helps me approach differences in opinions in a calmer and composed manner. Let's say India wins a cricket match - some say it was because of Virat's ton. Some say it's because of Bumrah's fifer. Or some say it was because of Rohit's quickfire 25 off 10 balls.
 
 I say **it's all of that**. Just with different weights.
 
@@ -82,13 +82,13 @@ We love single-factor explanations because they're simple. But life is **multiva
 
 ---
 
-Ever since I started viewing life through this lens — not the *linear* part of Linear Regression, but the *weighted combination* part — I've become less judgmental, more curious, and surprisingly more forgiving.
+Ever since I started viewing life through this lens - not the *linear* part of Linear Regression, but the *weighted combination* part - I've become less judgmental, more curious, and surprisingly more forgiving.
 
 Because nothing "just happens."
 
 <figure>
   <img src="/assets/images/2025-10-16-life-is-linear-regression/image3.webp" alt="Life as a sum of weighted factors">
-  <figcaption>Every outcome in life is the sum of multiple factors, each with its own weight — plus a bit of randomness</figcaption>
+  <figcaption>Every outcome in life is the sum of multiple factors, each with its own weight - plus a bit of randomness</figcaption>
 </figure>
 
 **Outcome = Σ (all factors × their weights) + some randomness**
