@@ -6,13 +6,14 @@ title: "Bejay Ketan Guin"
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      Available for opportunities
+      Always learning
     </div>
     <h1 class="hero-title">
       Hey, I'm <span class="gradient-text">Bejay Ketan Guin</span>
     </h1>
     <p class="hero-subtitle">
-      1.5x Human Senior Software Engineer specializing in Gen AI & Backend Engineering
+        1.5x Human Software Engineer • Exploring Gen AI & Backend • Love Cricket & Travel
+
     </p>
     <p class="hero-description">
     </p>
