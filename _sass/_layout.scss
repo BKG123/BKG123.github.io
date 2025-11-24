@@ -677,8 +677,8 @@
 
       .timeline-icon {
         position: absolute;
-        top: $spacer-xl;
-        left: $spacer-xl;
+        top: $spacer-lg;
+        left: $spacer-lg;
         width: 48px;
         height: 48px;
         background: white;
@@ -689,7 +689,8 @@
         justify-content: center;
         color: var(--accent-color);
         overflow: hidden;
-        padding: 4px;
+        padding: 6px;
+        flex-shrink: 0;
 
         img {
           width: 100%;
@@ -698,8 +699,11 @@
         }
 
         @media (max-width: 768px) {
-          width: 40px;
-          height: 40px;
+          top: $spacer;
+          left: $spacer;
+          width: 44px;
+          height: 44px;
+          padding: 4px;
           
           svg {
             width: 20px;
@@ -717,9 +721,10 @@
         gap: $spacer;
 
         @media (max-width: 768px) {
-          margin-left: 56px;
+          margin-left: 60px;
           flex-direction: column;
           gap: $spacer-sm;
+          margin-bottom: $spacer;
         }
 
         .timeline-title-group {
@@ -782,7 +787,8 @@
         font-size: 0.95rem;
 
         @media (max-width: 768px) {
-          margin-left: 56px;
+          margin-left: 60px;
+          font-size: 0.9rem;
         }
       }
     }
