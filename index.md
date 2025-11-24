@@ -134,7 +134,7 @@ title: "Bejay Ketan Guin"
             <span class="timeline-date">Aug 2021 - May 2022</span>
           </div>
         </div>
-        <p class="timeline-description">Advanced research in telecommunications</p>
+        <p class="timeline-description">Research in Deep Learning based classification systems</p>
       </div>
     </div>
   </div>
