@@ -18,7 +18,7 @@ title: "Bejay Ketan Guin"
     <p class="hero-description">
     </p>
     <div class="hero-cta">
-      <a href="https://drive.google.com/file/d/1myOKT9QD_HFTbRBFBHGA8Mg-CD8P1aI1/view?usp=sharing" class="btn-primary" target="_blank">
+      <a href="https://drive.google.com/file/d/19gEYV72VaI9cTtxkvNXObJqIULHVAxiD/view?usp=sharing" class="btn-primary" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
